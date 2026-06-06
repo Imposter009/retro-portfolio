@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumit Gupta — Retro Portfolio v1.0 (1996)</title>
+  <meta name="description" content="Sumit Gupta — Full Stack Developer portfolio on Windows 95">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- CRT monitor overlay (toggle via taskbar) -->
+  <div id="crt-overlay" class="crt-overlay" aria-hidden="true"></div>
+
+  <!-- Main desktop canvas -->
+  <div id="desktop-wrapper" class="desktop-wrapper">
+    <div id="desktop" class="desktop" role="application" aria-label="Windows 95 Desktop">
+
+      <!-- Marquee welcome banner -->
+      <div class="marquee-bar" aria-hidden="true">
+        <marquee behavior="scroll" direction="left" scrollamount="4">
+          ★★★ WELCOME TO SUMIT GUPTA'S HOMEPAGE ★★★ BEST VIEWED IN NETSCAPE NAVIGATOR 3.0 @ 800×600 ★★★ YOU ARE VISITOR #<span id="marquee-counter">000000</span> ★★★ UNDER CONSTRUCTION BUT AWESOME ★★★
+        </marquee>
+      </div>
+
+      <!-- Desktop icons -->
+      <div class="desktop-icons" id="desktop-icons"></div>
+
+      <!-- Recycle Bin -->
+      <div id="recycle-bin" class="recycle-bin" aria-label="Recycle Bin" title="Drag icons here to delete">
+        <div class="recycle-bin-icon recycle-bin-empty" id="recycle-bin-icon">🗑️</div>
+        <span class="recycle-bin-label">Recycle Bin</span>
+        <span class="recycle-bin-hint">Click to Empty</span>
+      </div>
+
+      <!-- Sticky notes -->
+      <div class="sticky-notes" aria-label="Desktop sticky notes">
+        <div class="sticky-note sticky-note-1">
+          <div class="sticky-note-header">📌 QUICK READ</div>
+          <p>Sumit is a Java Full-Stack Developer with 2+ years building scalable Spring Boot backends and Angular frontends for enterprise systems.</p>
+          <p>He delivers measurable impact—20% throughput gains, Kafka event pipelines, and 95% unit test coverage on production code.</p>
+        </div>
+        <div class="sticky-note sticky-note-2">
+          <div class="sticky-note-header">📌 STACK</div>
+          <p>Core: Java · Spring Boot · Angular · SQL · Kafka</p>
+          <p>Also: React · Node.js · MongoDB · CI/CD · ELK</p>
+          <p class="sticky-note-footer">— Hire me! 📧</p>
+        </div>
+      </div>
+
+      <!-- Window container -->
+      <div id="window-layer" class="window-layer"></div>
+
+      <!-- Winamp-style player -->
+      <div id="winamp" class="winamp" aria-label="Winamp Player">
+        <div class="winamp-titlebar">
+          <span class="winamp-title">Winamp — SynthWave95.exe</span>
+          <button type="button" class="winamp-close" data-action="winamp-minimize" aria-label="Minimize Winamp">_</button>
+        </div>
+        <div class="winamp-body">
+          <div class="winamp-display">
+            <div class="winamp-vis" id="winamp-vis" aria-hidden="true"></div>
+            <div class="winamp-track" id="winamp-track">01. MODEM_DIALUP.WAV</div>
+          </div>
+          <div class="winamp-controls">
+            <button type="button" id="winamp-prev" aria-label="Previous">|◀</button>
+            <button type="button" id="winamp-play" aria-label="Play">▶</button>
+            <button type="button" id="winamp-stop" aria-label="Stop">■</button>
+            <button type="button" id="winamp-next" aria-label="Next">▶|</button>
+          </div>
+          <input type="range" id="winamp-volume" min="0" max="100" value="40" aria-label="Volume">
+        </div>
+      </div>
+
+      <!-- Under construction badge -->
+      <div class="construction-badge" aria-hidden="true">
+        <div class="construction-gif">🚧</div>
+        <span>UNDER<br>CONSTRUCTION</span>
+      </div>
+
+      <!-- Spinning 3D logo -->
+      <div class="logo-3d" aria-hidden="true">
+        <div class="logo-cube">
+          <div class="cube-face front">SG</div>
+          <div class="cube-face back">95</div>
+          <div class="cube-face right">DEV</div>
+          <div class="cube-face left">FS</div>
+          <div class="cube-face top">★</div>
+          <div class="cube-face bottom">★</div>
+        </div>
+      </div>
+
+      <!-- Taskbar -->
+      <footer class="taskbar" role="toolbar" aria-label="Taskbar">
+        <button type="button" id="start-btn" class="start-btn" aria-expanded="false" aria-haspopup="true">
+          <span class="start-logo" aria-hidden="true">⊞</span>
+          Start
+        </button>
+        <div id="start-menu" class="start-menu" hidden>
+          <div class="start-menu-banner">
+            <strong>Windows<span>95</span></strong>
+          </div>
+          <ul class="start-menu-list" id="start-menu-list"></ul>
+          <div class="start-menu-footer">
+            <button type="button" id="shutdown-btn">Shut Down...</button>
+          </div>
+        </div>
+        <div id="taskbar-windows" class="taskbar-windows"></div>
+        <div class="taskbar-tray">
+          <button type="button" id="crt-toggle" class="tray-btn" title="Toggle CRT Monitor">📺 CRT</button>
+          <button type="button" id="sound-toggle" class="tray-btn" title="Toggle System Sounds">🔊</button>
+          <span class="tray-clock" id="tray-clock">12:00 PM</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Pixel hit counter -->
+  <div class="hit-counter" aria-label="Visitor counter">
+    <span class="hit-label">YOU ARE VISITOR #</span>
+    <span id="hit-counter-digits" class="hit-digits">000000</span>
+  </div>
+
+  <!-- Blue Screen of Death -->
+  <div id="bsod" class="bsod" hidden aria-live="assertive">
+    <div class="bsod-inner">
+      <p class="bsod-title">Windows</p>
+      <p class="bsod-line">A fatal exception 0E has occurred at 0028:C0011E36 in VXD VMM(01) + 00010E36.</p>
+      <p class="bsod-line">The current application will be terminated.</p>
+      <p class="bsod-line">&nbsp;</p>
+      <p class="bsod-line">* Press any key to terminate the current application.</p>
+      <p class="bsod-line">* Press CTRL+ALT+DEL again to restart your computer.</p>
+      <p class="bsod-line">&nbsp;</p>
+      <p class="bsod-line">You will lose any unsaved information in all applications.</p>
+      <p class="bsod-line">&nbsp;</p>
+      <p class="bsod-line bsod-blink">Press any key to continue _</p>
+    </div>
+  </div>
+
+  <!-- Loading splash -->
+  <div id="boot-screen" class="boot-screen">
+    <div class="boot-content">
+      <div class="boot-logo">Microsoft Windows 95</div>
+      <div class="boot-bar"><div class="boot-bar-fill" id="boot-fill"></div></div>
+      <p class="boot-text" id="boot-text">Starting MS-DOS...</p>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
