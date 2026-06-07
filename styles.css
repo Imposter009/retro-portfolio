@@ -435,8 +435,7 @@ button:active, .btn-90s:active { border-style: inset; }
 .hit-digits { display: flex; gap: 2px; }
 .hit-digit {
   display: inline-block; width: 14px; height: 20px; background: #111; border: 1px inset #333;
-  color: #ff0000; font-size: 14px; font-weight: bold; text-align: center; line-height: 20px;
-  text-shadow: 0 0 4px #ff0000; font-family: "Courier New", monospace;
+  text-align: center; line-height: 20px; color: #00ff00; font-family: var(--font-mono); font-size: 12px;
 }
 
 .boot-screen {

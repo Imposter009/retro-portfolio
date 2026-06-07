@@ -1,0 +1,86 @@
+<svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes wave {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(20deg); }
+      }
+      @keyframes blink {
+        0%, 49%, 100% { opacity: 1; }
+        50%, 99% { opacity: 0.1; }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+      }
+      .wave-hand { animation: wave 0.8s ease-in-out infinite; transform-origin: 170px 120px; }
+      .blink-eye { animation: blink 3s ease-in-out infinite; }
+      .float-bot { animation: float 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Main body container -->
+  <g class="float-bot">
+    <!-- Body (rounded rectangle) -->
+    <rect x="40" y="80" width="120" height="140" fill="#ff6b35" rx="20" stroke="#000" stroke-width="3"/>
+    
+    <!-- Chest panel -->
+    <rect x="55" y="100" width="90" height="100" fill="#ff8855" rx="10" stroke="#000" stroke-width="2"/>
+    
+    <!-- Screen/LED display (left chest) -->
+    <rect x="65" y="110" width="30" height="30" fill="#00ff00" rx="3" stroke="#000" stroke-width="2"/>
+    <g opacity="0.6">
+      <circle cx="72" cy="117" r="2" fill="#000"/>
+      <circle cx="72" cy="127" r="2" fill="#000"/>
+      <circle cx="85" cy="117" r="2" fill="#000"/>
+      <circle cx="85" cy="127" r="2" fill="#000"/>
+    </g>
+    
+    <!-- Screen/LED display (middle chest) -->
+    <rect x="102" y="110" width="30" height="30" fill="#00ff00" rx="3" stroke="#000" stroke-width="2"/>
+    <text x="117" y="132" font-family="monospace" font-size="14" fill="#000" font-weight="bold" text-anchor="middle">B</text>
+    
+    <!-- Chest button -->
+    <circle cx="100" cy="165" r="8" fill="#ffff00" stroke="#000" stroke-width="2"/>
+    
+    <!-- Arms -->
+    <!-- Left arm -->
+    <rect x="20" y="120" width="35" height="20" fill="#ff6b35" rx="10" stroke="#000" stroke-width="2"/>
+    <circle cx="25" cy="130" r="10" fill="#ff6b35" stroke="#000" stroke-width="2"/>
+    
+    <!-- Right arm with hand (waving) -->
+    <rect x="145" y="120" width="35" height="20" fill="#ff6b35" rx="10" stroke="#000" stroke-width="2"/>
+    <g class="wave-hand">
+      <circle cx="175" cy="130" r="12" fill="#ff6b35" stroke="#000" stroke-width="2"/>
+      <rect x="180" y="122" width="8" height="16" fill="#ff6b35" stroke="#000" stroke-width="2"/>
+    </g>
+    
+    <!-- Legs -->
+    <!-- Left leg -->
+    <rect x="65" y="220" width="18" height="45" fill="#333" rx="5" stroke="#000" stroke-width="2"/>
+    <circle cx="74" cy="270" r="12" fill="#333" stroke="#000" stroke-width="2"/>
+    
+    <!-- Right leg -->
+    <rect x="117" y="220" width="18" height="45" fill="#333" rx="5" stroke="#000" stroke-width="2"/>
+    <circle cx="126" cy="270" r="12" fill="#333" stroke="#000" stroke-width="2"/>
+    
+    <!-- Head -->
+    <rect x="50" y="20" width="100" height="80" fill="#ff6b35" rx="15" stroke="#000" stroke-width="3"/>
+    
+    <!-- Eyes -->
+    <!-- Left eye -->
+    <rect x="65" y="35" width="20" height="25" fill="#ffff00" rx="3" stroke="#000" stroke-width="2"/>
+    <circle class="blink-eye" cx="75" cy="48" r="8" fill="#000"/>
+    
+    <!-- Right eye -->
+    <rect x="115" y="35" width="20" height="25" fill="#ffff00" rx="3" stroke="#000" stroke-width="2"/>
+    <circle class="blink-eye" cx="125" cy="48" r="8" fill="#000" style="animation-delay: 0.1s"/>
+    
+    <!-- Mouth (happy) -->
+    <path d="M 75 70 Q 100 85 125 70" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 80 72 Q 100 78 120 72" stroke="#ffff00" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- Badge/Label below -->
+  <text x="100" y="300" font-family="Arial" font-size="16" fill="#ff6b35" text-anchor="middle" font-weight="bold">ByteBot v1.0</text>
+</svg>

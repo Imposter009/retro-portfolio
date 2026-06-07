@@ -7,13 +7,13 @@ const PORTFOLIO_DATA = {
   profile: {
     name: "Sumit Gupta",
     role: "Full Stack Developer",
-    tagline: "Full Stack Developer & Problem Solver",
+    tagline: "Java Full Stack Developer & Problem Solver",
     email: "sumitgupta19900@gmail.com",
     phone: "+91 7905342319",
     location: "Noida, India",
     github: "https://github.com/Imposter009",
     linkedin: "https://www.linkedin.com/in/sumit-gupta-dev/",
-    resume: "../cursor-portfolio/assets/My Resume.pdf",
+    resume: "assets/resume/My Resume.pdf",
     summary:
       "Experienced Full Stack Developer with 2+ years of expertise in the Java/Spring ecosystem. I focus on engineering scalable backend systems and robust SQL databases. By prioritizing clean code and architectural efficiency, I have successfully enhanced system throughput and stability by 20% across core applications.",
     typingPhrases: [
@@ -71,13 +71,22 @@ const PORTFOLIO_DATA = {
 
   projects: [
     {
+      title: "Retro Style Portfolio",
+      description:
+        "A nostalgic Windows 95-themed portfolio website featuring a functional desktop emulation. Built with vanilla HTML5, CSS3, and JavaScript. Includes project gallery, skills browser, and interactive DOS terminal.",
+      tech: ["Cursor.ai","HTML5", "CSS3", "JavaScript", "SVG", "Web Audio API"],
+      demo: "https://retro-portfolio-ashen.vercel.app/",
+      github: "https://github.com/Imposter009/retro-portfolio",
+      thumbImage: "assets/images/retro-portfolio.png",
+    },
+    {
       title: "E-commerce Website",
       description:
         "A fully functional e-commerce platform with end-to-end features. Implemented secure user authentication with JWT and file handling with Multer. Features include product management, user profiles, and shopping cart functionality.",
       tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Multer"],
       demo: "https://e-commerce-sooty-mu.vercel.app/",
       github: "https://github.com/Imposter009/e-commerce",
-      thumbLabel: "[IMG: E-COMMERCE.GIF]",
+      thumbImage: "assets/images/project-1.jpg",
     },
     {
       title: "Modern Portfolio Website (Cursor.AI)",
@@ -86,7 +95,7 @@ const PORTFOLIO_DATA = {
       tech: ["HTML5", "CSS3", "JavaScript", "Cursor.AI"],
       demo: "https://cursor-portfolio-theta.vercel.app/",
       github: "https://github.com/Imposter009/cursor-portfolio",
-      thumbLabel: "[IMG: PORTFOLIO.BMP]",
+      thumbImage: "assets/icons/project-portfolio-cursor.png",
     },
     {
       title: "Nandini Chikan E-commerce",
@@ -95,16 +104,16 @@ const PORTFOLIO_DATA = {
       tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
       demo: "https://imposter009.github.io/Nandini_Chikan",
       github: "https://github.com/Imposter009/Nandini_Chikan",
-      thumbLabel: "[IMG: CHIKAN.JPG]",
+      thumbImage: "assets/images/nandini-website.png",
     },
   ],
 
   skills: {
-    "C:\\Program Files\\Languages": ["C/C++", "Java", "JavaScript", "TypeScript", "HTML5", "CSS3"],
+    "C:\\Program Files\\Languages": ["Java", "JavaScript", "TypeScript", "HTML5", "CSS3"],
     "C:\\Program Files\\Frontend": ["Angular", "React.js", "Tailwind CSS", "Redux"],
     "C:\\Program Files\\Backend": ["Spring Boot", "Node.js", "Express.js", "PostgreSQL", "MongoDB"],
     "C:\\Windows\\System32\\Drivers": [
-      "Git", "VS Code", "MySQL", "Eclipse", "Cursor.AI", "Swagger",
+      "Git", "MySQL", "Cursor.AI", "Swagger",
       "ELK Stack", "REST APIs", "Microservices", "Jira", "JasperReports", "Kafka",
     ],
   },
@@ -116,9 +125,9 @@ const PORTFOLIO_DATA = {
   ],
 
   certifications: [
-    { title: "SPOT Award", issuer: "Intellect Design Arena", date: "March 2026", type: "Award" },
-    { title: '"You Did It" Award', issuer: "Intellect Design Arena", date: "March 2025", type: "Award" },
-    { title: '"You Did It" Award', issuer: "Intellect Design Arena", date: "November 2024", type: "Award" },
+    { title: "SPOT Award", issuer: "Intellect Design Arena", date: "March 2026", type: "Award", image: "assets/images/SPOT award.png" },
+    { title: '"You Did It" Award', issuer: "Intellect Design Arena", date: "March 2025", type: "Award", image: "assets/images/You did it award November.jpg" },
+    { title: '"You Did It" Award', issuer: "Intellect Design Arena", date: "November 2025", type: "Award", image: "assets/images/You did it award November.jpg" },
     { title: "Research Publication", issuer: "Asian Journal of Research in Computer Science", date: "April 2024", type: "Publication" },
     { title: "MongoDB Node.js Developer Path", issuer: "MongoDB", date: "May 2024", type: "Certification" },
     { title: "MERN Stack - The Complete Guide", issuer: "Infosys", date: "December 2023", type: "Certification" },
@@ -135,9 +144,6 @@ const WINDOWS = [
   { id: "paint", icon: "🎨", label: "Paint", title: "untitled — Paint", width: 500, height: 420, x: 140, y: 90 },
 ];
 
-/* ==========================================================================
-   Sound Engine (Web Audio API beeps)
-   ========================================================================== */
 
 class SoundEngine {
   constructor() {
@@ -491,6 +497,7 @@ class WindowManager {
     if (id === "browser") initBrowser(el);
     if (id === "inbox") initInbox(el);
     if (id === "paint") initPaint(el);
+    if (id === "education") initEducation(el);
     if (id === "my-computer" || id === "system-props") initTabs(el);
   }
 }
@@ -649,8 +656,11 @@ function renderInbox() {
         <div class="field-row"><label>To:</label><input type="text" value="${profile.email}" readonly></div>
         <div class="field-row"><label>From:</label><input type="text" name="name" placeholder="Your Name" required></div>
         <div class="field-row"><label>Reply:</label><input type="email" name="email" placeholder="your@email.com" required></div>
-        <div class="field-row"><label>Subject:</label><input type="text" name="subject" value="Message from Geocities Visitor" required></div>
-        <div class="field-row" style="align-items:flex-start;"><label>Message:</label><textarea name="message" rows="5" placeholder="Type your message here..." required></textarea></div>
+        <div class="field-row"><label>Subject:</label><input type="text" name="subject" value="Congratulations! Welcome to the Team 🎉" required></div>
+        <div class="field-row" style="align-items:flex-start;"><label>Message:</label><textarea name="message" rows="5" placeholder="Hi Sumit,
+                                                                                                                                      We opened your portfolio.
+                                                                                                                                      You're hired. Please arrive Monday before we change our minds.
+                                                                                                                                      — Recruitment Team" required></textarea></div>
         <div style="display:flex;gap:8px;margin-top:8px;">
           <button type="submit" class="btn-90s">Send</button>
           <button type="reset" class="btn-90s">Clear</button>
@@ -675,7 +685,13 @@ function renderEducation() {
     .join("");
 
   const certs = PORTFOLIO_DATA.certifications
-    .map((c) => `<div class="tree-file">${c.type}: ${c.title} (${c.date}) — ${c.issuer}</div>`)
+    .map((c) => `
+      <div class="panel-outset" style="margin-bottom: 8px; cursor: pointer; background: #e8f4f8;" data-cert-title="${c.title}" data-cert-image="${c.image || ''}">
+        <div style="font-weight: bold; color: #00007f; margin-bottom: 4px;">${c.type}: ${c.title}</div>
+        <div style="font-size: 10px; color: #555;">${c.issuer} — ${c.date}</div>
+        ${c.image ? `<div style="font-size: 9px; color: #0066cc; margin-top: 4px; cursor: pointer; text-decoration: underline;">[Click to view certificate]</div>` : ''}
+      </div>
+    `)
     .join("");
 
   return `
@@ -683,7 +699,7 @@ function renderEducation() {
     ${items}
     <div class="panel-inset">
       <strong>Installed Certificates & Awards:</strong>
-      <div class="tree-view" style="margin-top:6px;">${certs}</div>
+      <div id="certs-container" style="margin-top:6px;">${certs}</div>
     </div>
   `;
 }
@@ -708,7 +724,9 @@ function renderProjectsPage() {
       (p) => `
       <div class="project-frame">
         <h3>${p.title}</h3>
-        <div class="project-thumb">${p.thumbLabel}</div>
+        <div class="project-thumb" style="background: linear-gradient(135deg, #666, #999); display: flex; align-items: center; justify-content: center;">
+          ${p.thumbImage ? `<img src="${p.thumbImage}" alt="${p.title}" style="max-width: 100%; max-height: 100%; object-fit: cover;">` : `<span style="color: white; font-size: 11px;">[Project Image]</span>`}
+        </div>
         <p>${p.description}</p>
         <div class="tag-row">${p.tech.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
         <div class="project-links">
@@ -760,9 +778,23 @@ function initMyComputer(el, sound) {
     });
   });
 
+  // Certificate/Award click handlers
+  const certsContainer = el.querySelector("#certs-container");
+  if (certsContainer) {
+    certsContainer.querySelectorAll("[data-cert-image]").forEach((cert) => {
+      const imageUrl = cert.dataset.certImage;
+      if (imageUrl) {
+        cert.style.cursor = "pointer";
+        cert.addEventListener("click", () => {
+          window.open(imageUrl, "_blank", "width=600,height=800");
+        });
+      }
+    });
+  }
+
   const input = el.querySelector("#terminal-input");
   if (input) {
-    const terminal = el.querySelector("#dos-terminal");
+    const terminal = el.querySelector("#dos-terminal") || el.querySelector(".terminal");
     const commands = {
       help: "Commands: help, dir, ver, skills, experience, projects, cls, echo, sudo, matrix, format",
       ver: "MS-DOS Version 6.22 — Sumit Gupta Developer Edition",
@@ -989,6 +1021,22 @@ function initPaint(el) {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     status.textContent = "Canvas cleared.";
   });
+}
+
+function initEducation(el) {
+  // Certificate/Award click handlers
+  const certsContainer = el.querySelector("#certs-container");
+  if (certsContainer) {
+    certsContainer.querySelectorAll("[data-cert-image]").forEach((cert) => {
+      const imageUrl = cert.dataset.certImage;
+      if (imageUrl) {
+        cert.style.cursor = "pointer";
+        cert.addEventListener("click", () => {
+          window.open(imageUrl, "_blank", "width=600,height=800");
+        });
+      }
+    });
+  }
 }
 
 /* ==========================================================================
