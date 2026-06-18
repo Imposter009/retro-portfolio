@@ -6,53 +6,56 @@
 const PORTFOLIO_DATA = {
   profile: {
     name: "Sumit Gupta",
-    role: "Full Stack Developer",
-    tagline: "Java Full Stack Developer & Problem Solver",
+    role: "Java Full-Stack Engineer",
+    tagline: "Java Full-Stack Engineer & Problem Solver",
     email: "sumitgupta19900@gmail.com",
     phone: "+91 7905342319",
     location: "Noida, India",
     github: "https://github.com/Imposter009",
     linkedin: "https://www.linkedin.com/in/sumit-gupta-dev/",
     resume: "assets/resume/My Resume.pdf",
+    avatar: "assets/images/profile.png",
     summary:
-      "Experienced Full Stack Developer with 2+ years of expertise in the Java/Spring ecosystem. I focus on engineering scalable backend systems and robust SQL databases. By prioritizing clean code and architectural efficiency, I have successfully enhanced system throughput and stability by 20% across core applications.",
+      "Java Full-Stack Engineer with 2+ years delivering high-throughput enterprise transaction systems within high-velocity environments, specializing in Java 8+, Spring Boot microservices, Apache Kafka, and Angular. Delivered 23% faster order processing via Kafka async pipelines, a 27% reduction in production incidents, and systematically maintained 85% unit test coverage. Three-time corporate award recipient recognized for mitigating high-severity production outages, accelerating cloud-native asset feature delivery, and mentoring junior engineers in test-driven development methodologies.",
     typingPhrases: [
-      "Building Scalable Backend Solutions",
-      "Optimizing Enterprise Applications",
-      "Engineering High-Performance APIs",
-      "Crafting Seamless Full-Stack Experiences",
+      "Building Spring Boot Microservices",
+      "Constructing Apache Kafka Event Pipelines",
+      "Optimizing Enterprise Transactions",
+      "Engineering Scalable Full-Stack Solutions"
     ],
     stats: [
       { value: "2+", label: "Years Experience" },
-      { value: "10+", label: "Projects" },
-      { value: "5+", label: "Technologies" },
+      { value: "23%", label: "Faster Processing" },
+      { value: "85%", label: "Unit Test Coverage" }
     ],
     highlights: [
-      { title: "Backend Development", text: "Expertise in Java, Spring Boot, and database optimization" },
-      { title: "Frontend Development", text: "Skilled in Angular and modern web technologies" },
-      { title: "Database Management", text: "Proficient in SQL and MongoDB database systems" },
-    ],
+      { title: "Backend Development", text: "Expertise in Java, Spring Boot, and Kafka async pipelines" },
+      { title: "Frontend Development", text: "Skilled in Angular, NgRx, and RxJS reactive streams" },
+      { title: "Architecture & DevOps", text: "Proficient in SQL, MongoDB, Docker, and CI/CD pipelines" }
+    ]
   },
 
   experience: [
     {
       id: "intellect",
-      period: "2024 - Present",
-      title: "Associate Consultant",
-      company: "Intellect Design Arena",
+      period: "Aug 2024 - Present",
+      title: "Associate Consultant — Java Full-Stack Developer",
+      company: "Intellect Design Arena Ltd",
       achievements: [
-        "Improved database performance and API responsiveness by 20%",
-        "Reduced incident recurrence by 25%",
-        "Improved team efficiency by 30% through API documentation",
+        "Constructed asynchronous Apache Kafka event pipelines, reducing data sync latency from 350ms to 40ms and driving a 3x throughput scale during peak message bursts.",
+        "Reduced recurring P1/P2 production incidents by 27% through implementing a centralized JSON schema validation and uniform exception-handling abstraction layer.",
+        "Built 5+ reusable Angular components integrating NgRx store management, RxJS HttpClient observables, and OnPush change detection, reducing interface initialization latency by 35%.",
+        "Maintained 85% unit test coverage across continuous delivery pipelines utilizing TDD methodologies with JUnit 5 and Mockito, mitigating regression defects."
       ],
       responsibilities: [
-        "Developed and maintained iCPX/iGPX procurement solution",
-        "Designed robust backend systems using SQL and Spring Boot",
-        "Developed frontend features using Angular",
-        "Diagnosed and resolved critical system issues",
-        "Maintained 95% code coverage in unit testing",
+        "Architected high-throughput RESTful microservices for core Order and Shipment modules, applying SOLID principles to decouple domain boundaries and establish independent deployments.",
+        "Eliminated synchronous processing bottlenecks on multi-party transactions by constructing asynchronous Apache Kafka event pipelines.",
+        "Reduced recurring P1/P2 production incidents by 27% through implementing centralized JSON schema validation and exception-handling layers, accelerating log tracking via Kibana.",
+        "Built 5+ reusable Angular components integrating NgRx store management, RxJS observables, and OnPush change detection to process procurement data streams.",
+        "Maintained 85% unit test coverage across continuous delivery pipelines utilizing TDD methodologies with JUnit 5 and Mockito.",
+        "Lowered external integration overhead and developer onboarding timelines by 30% by publishing comprehensive Swagger/OpenAPI 3.0 contracts."
       ],
-      tech: ["Java", "Spring Boot", "Angular", "SQL", "Git", "Swagger", "Jira", "ELK", "CI/CD", "JasperReports", "Kafka"],
+      tech: ["Java 8+", "Spring Boot", "PostgreSQL", "Angular", "Kafka", "Swagger", "ELK", "CI/CD", "JUnit 5", "Mockito"]
     },
     {
       id: "esyatech",
@@ -66,88 +69,140 @@ const PORTFOLIO_DATA = {
       ],
       tech: ["React", "JavaScript", "HTML", "CSS"],
       certLink: "https://drive.google.com/file/d/1gQAUBdNLOjxE1cA1QqdzX3w4zx_g-Y7t/view?usp=sharing",
-    },
+    }
   ],
 
   projects: [
     {
-      title: "Retro Style Portfolio",
+      title: "Retro Windows 95 Portfolio",
       description:
-        "A nostalgic Windows 95-themed portfolio website featuring a functional desktop emulation. Built with vanilla HTML5, CSS3, and JavaScript. Includes project gallery, skills browser, and interactive DOS terminal.",
-      tech: ["Cursor.ai","HTML5", "CSS3", "JavaScript", "SVG", "Web Audio API"],
+        "An interactive 90s Windows 95 desktop replica portfolio featuring custom draggable/resizable windows, an MS-DOS prompt mockup with retro interactive easter eggs, a synthesizer Winamp-style MIDI player via Web Audio API, and an MS Paint clone.",
+      tech: ["HTML5", "CSS3", "JavaScript", "Web Audio API", "HTML5 Canvas"],
       demo: "https://retro-portfolio-ashen.vercel.app/",
       github: "https://github.com/Imposter009/retro-portfolio",
       thumbImage: "assets/images/retro-portfolio.png",
     },
     {
-      title: "E-commerce Website",
+      title: "Developer Portfolio",
       description:
-        "A fully functional e-commerce platform with end-to-end features. Implemented secure user authentication with JWT and file handling with Multer. Features include product management, user profiles, and shopping cart functionality.",
-      tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Multer"],
+        "Deployed a responsive production-tier web presentation platform utilizing structural HTML5, CSS3, and JavaScript, optimizing static assets via AI-assisted development practices to achieve a sub-2s response window on Vercel.",
+      tech: ["HTML5", "CSS3", "JavaScript", "Vercel", "Claude API", "Cursor AI"],
+      demo: "https://cursor-portfolio-theta.vercel.app/",
+      github: "https://github.com/Imposter009/cursor-portfolio",
+      thumbImage: "assets/images/project-portfolio-cursor.png",
+    },
+    {
+      title: "Full-Stack E-Commerce Platform",
+      description:
+        "Implemented a scalable commercial web application managing 1,000+ cataloged product listings using server-side pagination, secure token-based session verification, authorization middleware, and integrating Stripe processing endpoints.",
+      tech: ["React.js", "Node.js", "Express", "MongoDB", "JWT", "Stripe API", "Multer"],
       demo: "https://e-commerce-sooty-mu.vercel.app/",
       github: "https://github.com/Imposter009/e-commerce",
       thumbImage: "assets/images/project-1.jpg",
     },
-    {
-      title: "Modern Portfolio Website (Cursor.AI)",
-      description:
-        "A professional portfolio website built entirely using Cursor.AI. Features include dark/light theme, smooth animations, responsive design, and modern UI components.",
-      tech: ["HTML5", "CSS3", "JavaScript", "Cursor.AI"],
-      demo: "https://cursor-portfolio-theta.vercel.app/",
-      github: "https://github.com/Imposter009/cursor-portfolio",
-      thumbImage: "assets/icons/project-portfolio-cursor.png",
-    },
-    {
-      title: "Nandini Chikan E-commerce",
-      description:
-        "A full-featured e-commerce website for Nandini Chikan, showcasing traditional Chikankari products with product categorization and responsive design.",
-      tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-      demo: "https://imposter009.github.io/Nandini_Chikan",
-      github: "https://github.com/Imposter009/Nandini_Chikan",
-      thumbImage: "assets/images/nandini-website.png",
-    },
   ],
 
   skills: {
-    "C:\\Program Files\\Languages": ["Java", "JavaScript", "TypeScript", "HTML5", "CSS3"],
-    "C:\\Program Files\\Frontend": ["Angular", "React.js", "Tailwind CSS", "Redux"],
-    "C:\\Program Files\\Backend": ["Spring Boot", "Node.js", "Express.js", "PostgreSQL", "MongoDB"],
-    "C:\\Windows\\System32\\Drivers": [
-      "Git", "MySQL", "Cursor.AI", "Swagger",
-      "ELK Stack", "REST APIs", "Microservices", "Jira", "JasperReports", "Kafka",
-    ],
+    "C:\\Program Files\\Languages & Backend": ["Java 8+", "TypeScript", "JavaScript", "SQL", "Spring Boot", "Spring Security", "Spring MVC", "Hibernate", "JPA", "Node.js", "Express"],
+    "C:\\Program Files\\Architecture & Databases": ["Microservices Architecture", "Apache Kafka", "RESTful APIs", "JWT", "PostgreSQL", "MongoDB", "Redis (Caching)", "System Design", "Event-Driven Design"],
+    "C:\\Program Files\\Frontend Development": ["Angular 10+", "React.js", "NgRx", "RxJS", "OnPush Change Detection", "Lazy Loading", "HTML5", "CSS3"],
+    "C:\\Windows\\System32\\Drivers": ["Docker", "Jenkins (CI/CD)", "AWS (EC2, S3)", "MinIO", "Kubernetes", "JUnit 5", "Mockito", "Git", "ELK Stack", "Swagger/OpenAPI 3.0", "JasperReports", "SonarQube", "Agile/Scrum"],
+    "C:\\Windows\\System32\\AI_Agents": ["Prompt Engineering", "LLM Integration Fundamentals", "Responsible AI Deployment (Claude API, Cursor AI)"]
   },
 
   education: [
-    { year: "2024", period: "2020 - 2024", degree: "Bachelor of Technology", school: "Amity University", location: "Lucknow, UP", score: "CGPA 8.35/10" },
+    { year: "2024", period: "2020 - 2024", degree: "Bachelor of Technology (Computer Science & Engineering)", school: "Amity University", location: "Lucknow, UP", score: "CGPA 8.35/10" },
     { year: "2019", period: "2018 - 2019", degree: "Class 12th (Science)", school: "City Montessori School", location: "Lucknow, UP", score: "91.25%" },
-    { year: "2017", period: "2016 - 2017", degree: "Class 10th", school: "City Montessori School", location: "Lucknow, UP", score: "89.50%" },
+    { year: "2017", period: "2016 - 2017", degree: "Class 10th", school: "City Montessori School", location: "Lucknow, UP", score: "89.50%" }
   ],
 
   certifications: [
-    { title: "SPOT Award", issuer: "Intellect Design Arena", date: "March 2026", type: "Award", image: "assets/images/SPOT award.png" },
-    { title: '"You Did It" Award', issuer: "Intellect Design Arena", date: "March 2025", type: "Award", image: "assets/images/You did it award November.jpg" },
-    { title: '"You Did It" Award', issuer: "Intellect Design Arena", date: "November 2025", type: "Award", image: "assets/images/You did it award November.jpg" },
-    { title: "Research Publication", issuer: "Asian Journal of Research in Computer Science", date: "April 2024", type: "Publication" },
-    { title: "MongoDB Node.js Developer Path", issuer: "MongoDB", date: "May 2024", type: "Certification" },
-    { title: "MERN Stack - The Complete Guide", issuer: "Infosys", date: "December 2023", type: "Certification" },
+    { title: "SPOT Award (Q1 2025)", issuer: "Intellect Design Arena Ltd", date: "Q1 2025", type: "Award", text: "For technical ownership in resolving mission-critical P1/P2 deliverables", image: "assets/images/SPOT award.png" },
+    { title: '"You Did It" Award (March 2025)', issuer: "Intellect Design Arena Ltd", date: "March 2025", type: "Award", text: "For implementing structural peer review patterns that upskilled team deliverables", image: "assets/images/B435-march2025.jpeg" },
+    { title: '"You Did It" Award (Q4 2024)', issuer: "Intellect Design Arena Ltd", date: "Q4 2024", type: "Award", text: "For record technology stack onboarding velocity", image: "assets/images/You did it award November.jpg" },
+    { title: "AI Fluency: Framework & Foundations", issuer: "Anthropic", date: "2026", type: "Certification", text: "Training on foundational LLM behaviors, contexts, and deployment guidelines", image: "assets/images/antropic certificate.png" },
+    { title: "Website Performance Metrics Publication", issuer: "Asian Journal of Research in Computer Science", date: "Apr 2024", type: "Publication", text: "Research on text compression, CDN caching, and Core Web Vitals", link: "https://journalajrcos.com/index.php/AJRCOS/article/view/461" }
   ],
 };
 
 const WINDOWS = [
-  { id: "system-props", icon: "🖥️", label: "System Properties", title: "System Properties — Sumit Gupta", width: 480, height: 380, x: 120, y: 60 },
-  { id: "my-computer", icon: "💻", label: "My Computer", title: "My Computer — C:\\DOS", width: 520, height: 420, x: 80, y: 80 },
-  { id: "network", icon: "🌐", label: "Network Neighborhood", title: "Network Neighborhood — Corporate Intranet", width: 560, height: 440, x: 160, y: 100 },
-  { id: "browser", icon: "🌍", label: "Internet Explorer", title: "Internet Explorer — Projects Gallery", width: 580, height: 480, x: 200, y: 60 },
-  { id: "inbox", icon: "📧", label: "Inbox (Outlook)", title: "Outlook Express — New Message", width: 440, height: 400, x: 240, y: 120 },
-  { id: "education", icon: "🎓", label: "Education", title: "Control Panel — Education Settings", width: 460, height: 360, x: 300, y: 80 },
-  { id: "paint", icon: "🎨", label: "Paint", title: "untitled — Paint", width: 500, height: 420, x: 140, y: 90 },
+  { id: "system-props", icon: "🖥️", label: "System Properties", title: "System Properties — Sumit Gupta", tooltip: "System Properties", width: 480, height: 380, x: 120, y: 60 },
+  { id: "my-computer", icon: "💻", label: "My Computer", title: "My Computer — C:\\DOS", tooltip: "C:\\ Drive", width: 520, height: 420, x: 80, y: 80 },
+  { id: "network", icon: "🌐", label: "Network Neighborhood", title: "Network Neighborhood — Corporate Intranet", tooltip: "Intranet Servers", width: 560, height: 440, x: 160, y: 100 },
+  { id: "browser", icon: "📁", label: "Projects", title: "Internet Explorer — Projects Gallery", tooltip: "Proceed at your own curiosity.", width: 580, height: 480, x: 200, y: 60 },
+  { id: "resume", icon: "📄", label: "Resume.doc", title: "Resume.doc — Notepad", tooltip: "Contains caffeine-powered code.", width: 450, height: 350, x: 140, y: 120 },
+  { id: "terminal", icon: "🖥️", label: "Terminal", title: "MS-DOS Prompt", tooltip: "Definitely not hacking.", width: 500, height: 380, x: 100, y: 100 },
+  { id: "inbox", icon: "📧", label: "Inbox (Outlook)", title: "Outlook Express — New Message", tooltip: "Contact Sumit", width: 480, height: 440, x: 240, y: 120 },
+  { id: "education", icon: "🎓", label: "Education", title: "Control Panel — Education Settings", tooltip: "Degrees & Certifications", width: 460, height: 360, x: 300, y: 80 },
+  { id: "paint", icon: "🎨", label: "Paint", title: "untitled — Paint", tooltip: "Paintbrush.exe", width: 500, height: 420, x: 140, y: 90 },
 ];
+
+
+/* ==========================================================================
+   Layout & Responsive Helpers
+   ========================================================================== */
+
+const LAYOUT = {
+  REF_WIDTH: 1024,
+  REF_LAYER_HEIGHT: 716, /* 768 - taskbar - marquee */
+  MOBILE_BREAKPOINT: 768,
+  MIN_WINDOW_WIDTH: 320,
+  MIN_WINDOW_HEIGHT: 240,
+};
+
+function isMobileLayout() {
+  return window.innerWidth <= LAYOUT.MOBILE_BREAKPOINT;
+}
+
+function getWindowLayerMetrics() {
+  const layer = document.getElementById("window-layer");
+  return {
+    width: layer.clientWidth || window.innerWidth,
+    height: layer.clientHeight || window.innerHeight - 48,
+  };
+}
+
+function scaleWindowDef(def) {
+  const { width: layerW, height: layerH } = getWindowLayerMetrics();
+  const scaleX = layerW / LAYOUT.REF_WIDTH;
+  const scaleY = layerH / LAYOUT.REF_LAYER_HEIGHT;
+
+  let width = Math.round(def.width * scaleX);
+  let height = Math.round(def.height * scaleY);
+  let x = Math.round(def.x * scaleX);
+  let y = Math.round(def.y * scaleY);
+
+  width = Math.max(LAYOUT.MIN_WINDOW_WIDTH, Math.min(width, layerW));
+  height = Math.max(LAYOUT.MIN_WINDOW_HEIGHT, Math.min(height, layerH));
+
+  return clampWindowRect({ x, y, width, height }, layerW, layerH);
+}
+
+function clampWindowRect(rect, layerW, layerH) {
+  const width = Math.min(Math.max(rect.width, LAYOUT.MIN_WINDOW_WIDTH), layerW);
+  const height = Math.min(Math.max(rect.height, LAYOUT.MIN_WINDOW_HEIGHT), layerH);
+  const x = Math.max(0, Math.min(rect.x, layerW - width));
+  const y = Math.max(0, Math.min(rect.y, layerH - height));
+  return { x, y, width, height };
+}
+
+function applyMobileModeClass() {
+  document.body.classList.toggle("mobile-mode", isMobileLayout());
+}
+
+function debounce(fn, ms) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), ms);
+  };
+}
 
 
 class SoundEngine {
   constructor() {
-    this.enabled = true;
+    this.enabled = localStorage.getItem("retro_portfolio_sound_enabled") !== "false";
+    this.volume = parseFloat(localStorage.getItem("retro_portfolio_sound_volume") ?? "0.5");
     this.ctx = null;
   }
 
@@ -162,16 +217,26 @@ class SoundEngine {
 
   beep(freq = 880, duration = 0.06, type = "square", volume = 0.08) {
     if (!this.enabled) return;
+    const computedVol = volume * this.volume;
+    if (computedVol <= 0.0001) return; // Ignore silent clicks
+
     this.init();
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
     osc.type = type;
     osc.frequency.value = freq;
-    gain.gain.value = volume;
+    
+    // Web Audio: set starting value properly to avoid zero/negatives triggering errors
+    gain.gain.setValueAtTime(computedVol, this.ctx.currentTime);
     osc.connect(gain);
     gain.connect(this.ctx.destination);
+    
     osc.start();
-    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+    try {
+      gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+    } catch (e) {
+      gain.gain.linearRampToValueAtTime(0, this.ctx.currentTime + duration);
+    }
     osc.stop(this.ctx.currentTime + duration);
   }
 
@@ -180,6 +245,11 @@ class SoundEngine {
   close() { this.beep(330, 0.06); }
   minimize() { this.beep(520, 0.04); this.beep(380, 0.04); }
   error() { this.beep(200, 0.12, "sawtooth"); }
+  success() {
+    [523, 659, 784, 1046].forEach((f, i) => {
+      setTimeout(() => this.beep(f, 0.08, "sine", 0.06), i * 80);
+    });
+  }
   startup() { [262, 330, 392, 523].forEach((f, i) => setTimeout(() => this.beep(f, 0.15, "square", 0.06), i * 120)); }
 
   crunch() {
@@ -198,10 +268,24 @@ class SoundEngine {
     const noise = this.ctx.createBufferSource();
     noise.buffer = buffer;
     const gain = this.ctx.createGain();
-    gain.gain.value = 0.08;
+    gain.gain.value = 0.08 * this.volume;
     noise.connect(gain);
     gain.connect(this.ctx.destination);
     noise.start();
+  }
+
+  toggle(state) {
+    if (state !== undefined) {
+      this.enabled = state;
+    } else {
+      this.enabled = !this.enabled;
+    }
+    localStorage.setItem("retro_portfolio_sound_enabled", this.enabled);
+  }
+
+  setVolume(vol) {
+    this.volume = Math.max(0, Math.min(1, vol));
+    localStorage.setItem("retro_portfolio_sound_volume", this.volume);
   }
 }
 
@@ -266,7 +350,7 @@ class WinampPlayer {
 
     this.interval = setInterval(() => {
       const freq = this.notes[this.noteIndex % this.notes.length];
-      const vol = (this.volumeEl.value / 100) * 0.06;
+      const vol = (this.volumeEl.value / 100) * 0.35; // Increased multiplier for audible playback
       this.sound.beep(freq, 0.18, "triangle", vol);
       this.animateVis();
       this.noteIndex++;
@@ -320,6 +404,95 @@ class WindowManager {
     this.zIndex = 100;
     this.activeId = null;
     this.dragState = null;
+    this.resizeObservers = new Map();
+
+    this.handleResize = debounce(() => this.onViewportResize(), 120);
+    window.addEventListener("resize", this.handleResize);
+    window.addEventListener("orientationchange", this.handleResize);
+  }
+
+  getLayerRect() {
+    return this.layer.getBoundingClientRect();
+  }
+
+  applyWindowRect(el, rect) {
+    el.style.left = `${rect.x}px`;
+    el.style.top = `${rect.y}px`;
+    el.style.width = `${rect.width}px`;
+    el.style.height = `${rect.height}px`;
+  }
+
+  clampWindowEl(el) {
+    if (this.dragState) return;
+    const win = [...this.windows.values()].find((w) => w.el === el);
+    if (!win || win.maximized || isMobileLayout()) return;
+
+    const { width: layerW, height: layerH } = getWindowLayerMetrics();
+    const rect = clampWindowRect(
+      {
+        x: parseInt(el.style.left, 10) || 0,
+        y: parseInt(el.style.top, 10) || 0,
+        width: el.offsetWidth,
+        height: el.offsetHeight,
+      },
+      layerW,
+      layerH
+    );
+    this.applyWindowRect(el, rect);
+  }
+
+  onViewportResize() {
+    applyMobileModeClass();
+    const mobile = isMobileLayout();
+
+    this.windows.forEach((win) => {
+      const { el, def } = win;
+      if (mobile) {
+        if (!win.maximized) {
+          win.savedRect = {
+            left: el.style.left,
+            top: el.style.top,
+            width: el.style.width,
+            height: el.style.height,
+          };
+        }
+        win.maximized = true;
+        el.classList.add("maximized", "mobile-window");
+      } else if (el.classList.contains("mobile-window")) {
+        el.classList.remove("mobile-window");
+        if (win.savedRect && win.savedRect.width) {
+          win.maximized = false;
+          el.classList.remove("maximized");
+          el.style.left = win.savedRect.left;
+          el.style.top = win.savedRect.top;
+          el.style.width = win.savedRect.width;
+          el.style.height = win.savedRect.height;
+        } else {
+          const rect = scaleWindowDef(def);
+          win.maximized = false;
+          el.classList.remove("maximized");
+          this.applyWindowRect(el, rect);
+        }
+      } else if (!win.maximized) {
+        this.clampWindowEl(el);
+      }
+    });
+  }
+
+  startDrag(id, clientX, clientY) {
+    const win = this.windows.get(id);
+    if (!win || win.maximized || isMobileLayout()) return;
+
+    const el = win.el;
+    this.focus(id);
+    const rect = el.getBoundingClientRect();
+    const layerRect = this.getLayerRect();
+    this.dragState = {
+      id,
+      offsetX: clientX - rect.left,
+      offsetY: clientY - rect.top,
+      layerRect,
+    };
   }
 
   create(def, contentHtml) {
@@ -336,11 +509,16 @@ class WindowManager {
     const el = document.createElement("div");
     el.className = "window focused";
     el.dataset.id = def.id;
-    el.style.width = `${def.width}px`;
-    el.style.height = `${def.height}px`;
-    el.style.left = `${def.x}px`;
-    el.style.top = `${def.y}px`;
     el.style.zIndex = ++this.zIndex;
+
+    const mobile = isMobileLayout();
+    const rect = scaleWindowDef(def);
+
+    if (mobile) {
+      el.classList.add("maximized", "mobile-window");
+    } else {
+      this.applyWindowRect(el, rect);
+    }
 
     el.innerHTML = `
       <div class="window-titlebar" data-drag-handle>
@@ -356,31 +534,46 @@ class WindowManager {
 
     this.layer.appendChild(el);
     this.bindWindowEvents(el, def);
-    this.windows.set(def.id, { el, def, maximized: false, savedRect: null });
+
+    const winState = { el, def, maximized: mobile, savedRect: null };
+    if (mobile) winState.savedRect = { left: `${rect.x}px`, top: `${rect.y}px`, width: `${rect.width}px`, height: `${rect.height}px` };
+
+    this.windows.set(def.id, winState);
+    this.observeWindowResize(el);
     this.focus(def.id);
     this.updateTaskbar();
     this.sound.open();
     this.initWindowContent(def.id, el);
   }
 
+  observeWindowResize(el) {
+    if (typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(() => this.clampWindowEl(el));
+    observer.observe(el);
+    this.resizeObservers.set(el, observer);
+  }
+
   bindWindowEvents(el, def) {
     el.addEventListener("mousedown", () => this.focus(def.id));
 
-    el.querySelector("[data-drag-handle]").addEventListener("mousedown", (e) => {
+    const titlebar = el.querySelector("[data-drag-handle]");
+    titlebar.addEventListener("mousedown", (e) => {
       if (e.target.closest(".window-btn")) return;
-      const win = this.windows.get(def.id);
-      if (win.maximized) return;
-      this.focus(def.id);
-      const rect = el.getBoundingClientRect();
-      const desktopRect = document.getElementById("desktop").getBoundingClientRect();
-      this.dragState = {
-        id: def.id,
-        offsetX: e.clientX - rect.left,
-        offsetY: e.clientY - rect.top,
-        desktopRect,
-      };
       e.preventDefault();
+      this.startDrag(def.id, e.clientX, e.clientY);
     });
+
+    titlebar.addEventListener(
+      "touchstart",
+      (e) => {
+        if (e.target.closest(".window-btn")) return;
+        const touch = e.touches[0];
+        if (!touch) return;
+        e.preventDefault();
+        this.startDrag(def.id, touch.clientX, touch.clientY);
+      },
+      { passive: false }
+    );
 
     el.querySelectorAll(".window-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -393,15 +586,46 @@ class WindowManager {
     });
   }
 
-  onMouseMove(e) {
+  onPointerMove(clientX, clientY) {
     if (!this.dragState) return;
-    const { id, offsetX, offsetY, desktopRect } = this.dragState;
-    const win = this.windows.get(id);
-    if (!win || win.maximized) return;
-    const x = Math.max(0, Math.min(e.clientX - desktopRect.left - offsetX, desktopRect.width - 100));
-    const y = Math.max(20, Math.min(e.clientY - desktopRect.top - offsetY, desktopRect.height - 80));
-    win.el.style.left = `${x}px`;
-    win.el.style.top = `${y}px`;
+    this.dragState.clientX = clientX;
+    this.dragState.clientY = clientY;
+
+    if (!this.dragState.ticking) {
+      this.dragState.ticking = true;
+      requestAnimationFrame(() => {
+        if (!this.dragState) return;
+        const { id, offsetX, offsetY, layerRect, clientX: cx, clientY: cy } = this.dragState;
+        const win = this.windows.get(id);
+        if (win && !win.maximized) {
+          const el = win.el;
+          const winW = el.offsetWidth;
+          const winH = el.offsetHeight;
+          const maxX = layerRect.width - winW;
+          const maxY = layerRect.height - winH;
+
+          const x = Math.max(0, Math.min(cx - layerRect.left - offsetX, maxX));
+          const y = Math.max(0, Math.min(cy - layerRect.top - offsetY, maxY));
+          el.style.left = `${x}px`;
+          el.style.top = `${y}px`;
+        }
+        if (this.dragState) {
+          this.dragState.ticking = false;
+        }
+      });
+    }
+  }
+
+  onMouseMove(e) {
+    this.onPointerMove(e.clientX, e.clientY);
+  }
+
+  onTouchMove(e) {
+    if (!this.dragState) return;
+    const touch = e.touches[0];
+    if (!touch) return;
+    e.preventDefault();
+    this.onPointerMove(touch.clientX, touch.clientY);
   }
 
   onMouseUp() {
@@ -421,6 +645,11 @@ class WindowManager {
   close(id) {
     const win = this.windows.get(id);
     if (!win) return;
+    const observer = this.resizeObservers.get(win.el);
+    if (observer) {
+      observer.disconnect();
+      this.resizeObservers.delete(win.el);
+    }
     win.el.remove();
     this.windows.delete(id);
     this.updateTaskbar();
@@ -437,7 +666,7 @@ class WindowManager {
 
   toggleMaximize(id) {
     const win = this.windows.get(id);
-    if (!win) return;
+    if (!win || isMobileLayout()) return;
     const el = win.el;
 
     if (win.maximized) {
@@ -448,6 +677,7 @@ class WindowManager {
         el.style.top = win.savedRect.top;
         el.style.width = win.savedRect.width;
         el.style.height = win.savedRect.height;
+        this.clampWindowEl(el);
       }
     } else {
       win.savedRect = {
@@ -495,9 +725,10 @@ class WindowManager {
     if (id === "my-computer") initMyComputer(el, this.sound);
     if (id === "network") initNetwork(el);
     if (id === "browser") initBrowser(el);
-    if (id === "inbox") initInbox(el);
+    if (id === "inbox") initInbox(el, this.sound);
     if (id === "paint") initPaint(el);
     if (id === "education") initEducation(el);
+    if (id === "terminal") initStandaloneTerminal(el, this.sound);
     if (id === "my-computer" || id === "system-props") initTabs(el);
   }
 }
@@ -514,7 +745,9 @@ function renderSystemProperties() {
 
   return `
     <div class="sys-props-grid">
-      <div class="sys-icon-big">SG</div>
+      <div class="sys-icon-big">
+        ${profile.avatar ? `<img src="${profile.avatar}" alt="${profile.name}" class="sys-avatar-img">` : 'SG'}
+      </div>
       <div>
         <h3 style="font-size:14px;margin-bottom:6px;">${profile.name}</h3>
         <p><strong>Registered Owner:</strong> ${profile.name}</p>
@@ -567,8 +800,8 @@ function renderMyComputer() {
         <div class="terminal-line">C:\\DOS&gt; systeminfo /profile</div>
         <div class="terminal-line">Name: ${PORTFOLIO_DATA.profile.name}</div>
         <div class="terminal-line">Role: ${PORTFOLIO_DATA.profile.role}</div>
-        <div class="terminal-line">Throughput Gain: +20%</div>
-        <div class="terminal-line">Code Coverage: 95%</div>
+        <div class="terminal-line">Transaction Latency: -40%</div>
+        <div class="terminal-line">Code Coverage: 85%</div>
         <div class="terminal-line">Kafka Pipelines: ACTIVE</div>
         <div class="terminal-line">TDD Status: ENABLED</div>
         <div class="terminal-line">&nbsp;</div>
@@ -657,10 +890,7 @@ function renderInbox() {
         <div class="field-row"><label>From:</label><input type="text" name="name" placeholder="Your Name" required></div>
         <div class="field-row"><label>Reply:</label><input type="email" name="email" placeholder="your@email.com" required></div>
         <div class="field-row"><label>Subject:</label><input type="text" name="subject" value="Congratulations! Welcome to the Team 🎉" required></div>
-        <div class="field-row" style="align-items:flex-start;"><label>Message:</label><textarea name="message" rows="5" placeholder="Hi Sumit,
-                                                                                                                                      We opened your portfolio.
-                                                                                                                                      You're hired. Please arrive Monday before we change our minds.
-                                                                                                                                      — Recruitment Team" required></textarea></div>
+        <div class="field-row" style="align-items:flex-start;"><label>Message:</label><textarea name="message" rows="4" placeholder="Hi Sumit,&#10;We opened your portfolio.&#10;You're hired. Please arrive Monday before we change our minds.&#10;— Recruitment Team" required></textarea></div>
         <div style="display:flex;gap:8px;margin-top:8px;">
           <button type="submit" class="btn-90s">Send</button>
           <button type="reset" class="btn-90s">Clear</button>
@@ -686,10 +916,12 @@ function renderEducation() {
 
   const certs = PORTFOLIO_DATA.certifications
     .map((c) => `
-      <div class="panel-outset" style="margin-bottom: 8px; cursor: pointer; background: #e8f4f8;" data-cert-title="${c.title}" data-cert-image="${c.image || ''}">
+      <div class="panel-outset" style="margin-bottom: 8px; cursor: pointer; background: #e8f4f8;" data-cert-title="${c.title}" data-cert-image="${c.image || ''}" data-cert-link="${c.link || ''}">
         <div style="font-weight: bold; color: #00007f; margin-bottom: 4px;">${c.type}: ${c.title}</div>
-        <div style="font-size: 10px; color: #555;">${c.issuer} — ${c.date}</div>
+        <div style="font-size: 10px; color: #555; margin-bottom: 4px;">${c.issuer} — ${c.date}</div>
+        ${c.text ? `<div style="font-size: 10px; color: #333; font-style: italic; margin-bottom: 4px;">${c.text}</div>` : ''}
         ${c.image ? `<div style="font-size: 9px; color: #0066cc; margin-top: 4px; cursor: pointer; text-decoration: underline;">[Click to view certificate]</div>` : ''}
+        ${c.link ? `<div style="font-size: 9px; color: #0066cc; margin-top: 4px; cursor: pointer; text-decoration: underline;">[Click to view publication]</div>` : ''}
       </div>
     `)
     .join("");
@@ -714,6 +946,27 @@ function renderPaint() {
     <div class="paint-canvas-wrap">
       <canvas id="paint-canvas" class="paint-canvas" width="460" height="280" aria-label="Paint canvas"></canvas>
     </div>
+    <div class="paint-colors-container">
+      <div class="paint-selected-color" id="paint-current-color" style="background-color: #000000;" title="Current Color"></div>
+      <div class="paint-palette">
+        <div class="paint-color-swatch active" style="background-color: #000000;" data-color="#000000"></div>
+        <div class="paint-color-swatch" style="background-color: #808080;" data-color="#808080"></div>
+        <div class="paint-color-swatch" style="background-color: #800000;" data-color="#800000"></div>
+        <div class="paint-color-swatch" style="background-color: #808000;" data-color="#808000"></div>
+        <div class="paint-color-swatch" style="background-color: #008000;" data-color="#008000"></div>
+        <div class="paint-color-swatch" style="background-color: #008080;" data-color="#008080"></div>
+        <div class="paint-color-swatch" style="background-color: #000080;" data-color="#000080"></div>
+        <div class="paint-color-swatch" style="background-color: #800080;" data-color="#800080"></div>
+        <div class="paint-color-swatch" style="background-color: #ffffff;" data-color="#ffffff"></div>
+        <div class="paint-color-swatch" style="background-color: #c0c0c0;" data-color="#c0c0c0"></div>
+        <div class="paint-color-swatch" style="background-color: #ff0000;" data-color="#ff0000"></div>
+        <div class="paint-color-swatch" style="background-color: #ffff00;" data-color="#ffff00"></div>
+        <div class="paint-color-swatch" style="background-color: #00ff00;" data-color="#00ff00"></div>
+        <div class="paint-color-swatch" style="background-color: #00ffff;" data-color="#00ffff"></div>
+        <div class="paint-color-swatch" style="background-color: #0000ff;" data-color="#0000ff"></div>
+        <div class="paint-color-swatch" style="background-color: #ff00ff;" data-color="#ff00ff"></div>
+      </div>
+    </div>
     <p class="paint-status" id="paint-status">Tool: Brush (black, 2px) — Click and drag to draw</p>
   `;
 }
@@ -725,7 +978,7 @@ function renderProjectsPage() {
       <div class="project-frame">
         <h3>${p.title}</h3>
         <div class="project-thumb" style="background: linear-gradient(135deg, #666, #999); display: flex; align-items: center; justify-content: center;">
-          ${p.thumbImage ? `<img src="${p.thumbImage}" alt="${p.title}" style="max-width: 100%; max-height: 100%; object-fit: cover;">` : `<span style="color: white; font-size: 11px;">[Project Image]</span>`}
+          ${p.thumbImage ? `<img src="${p.thumbImage}" alt="${p.title}" style="width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; image-rendering: crisp-edges;">` : `<span style="color: white; font-size: 11px;">[Project Image]</span>`}
         </div>
         <p>${p.description}</p>
         <div class="tag-row">${p.tech.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
@@ -747,6 +1000,53 @@ function renderProjectsPage() {
     <div class="page-counter">
       <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='20'%3E%3Crect fill='%23000' width='80' height='20'/%3E%3Ctext x='4' y='14' fill='%23f00' font-family='monospace' font-size='10'%3EHITS:${String(getHitCount()).padStart(6, "0")}%3C/text%3E%3C/svg%3E" alt="Hit counter" width="80" height="20">
       <br>You are visitor #${String(getHitCount()).padStart(6, "0")} — Thanks for visiting!
+    </div>
+  `;
+}
+
+function renderResumeWindow() {
+  const { profile } = PORTFOLIO_DATA;
+  return `
+    <div style="background: #fff; font-family: var(--font-mono); font-size: 11px; padding: 10px; height: 100%; border: 2px inset var(--grey); overflow: auto; user-select: text; color: #000; line-height: 1.4;">
+      <p>File: C:\\RESUME.DOC</p>
+      <p>================================================</p>
+      <h2 style="font-size: 14px; margin-bottom: 4px;">${profile.name.toUpperCase()}</h2>
+      <p>${profile.role} | ${profile.location}</p>
+      <p>Email: ${profile.email}</p>
+      <p>Phone: ${profile.phone}</p>
+      <p>GitHub: ${profile.github}</p>
+      <p>LinkedIn: ${profile.linkedin}</p>
+      <p>================================================</p>
+      <br>
+      <p><strong>SUMMARY:</strong></p>
+      <p>${profile.summary}</p>
+      <br>
+      <p><strong>EXPERIENCE SUMMARY:</strong></p>
+      ${PORTFOLIO_DATA.experience.map(e => `
+        <p><strong>${e.title}</strong> — ${e.company} (${e.period})</p>
+        ${e.responsibilities.map(r => `  - ${r}`).join('<br>')}
+      `).join('<br>')}
+      <br>
+      <p>================================================</p>
+      <p style="margin-top: 12px; text-align: center;">
+        <a href="${profile.resume}" target="_blank" class="btn-90s" style="text-decoration: none; color: #000; display: inline-block;">Download PDF Resume</a>
+      </p>
+    </div>
+  `;
+}
+
+function renderStandaloneTerminal() {
+  return `
+    <div class="terminal" id="standalone-terminal" style="height: 100%; min-height: 280px; display: flex; flex-direction: column;">
+      <div class="terminal-line">Microsoft(R) Windows 95 (C) Copyright Microsoft Corp 1995.</div>
+      <div class="terminal-line">&nbsp;</div>
+      <div class="terminal-line">C:\\WINDOWS&gt; help</div>
+      <div class="terminal-line">Commands: help, dir, ver, skills, experience, projects, cls, matrix, format</div>
+      <div class="terminal-line">&nbsp;</div>
+      <div class="terminal-input-row" style="display: flex; align-items: center;">
+        <span class="terminal-prompt" style="color: #ffff00; margin-right: 8px;">C:\\WINDOWS&gt;</span>
+        <input type="text" class="terminal-input" id="standalone-terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal input" style="flex: 1; background: transparent; border: none; color: #00ff00; font-family: var(--font-mono); font-size: 12px; outline: none; caret-color: #00ff00;">
+      </div>
     </div>
   `;
 }
@@ -778,15 +1078,20 @@ function initMyComputer(el, sound) {
     });
   });
 
-  // Certificate/Award click handlers
+  // Certificate/Award/Publication click handlers
   const certsContainer = el.querySelector("#certs-container");
   if (certsContainer) {
-    certsContainer.querySelectorAll("[data-cert-image]").forEach((cert) => {
+    certsContainer.querySelectorAll(".panel-outset").forEach((cert) => {
       const imageUrl = cert.dataset.certImage;
-      if (imageUrl) {
+      const linkUrl = cert.dataset.certLink;
+      if (imageUrl || linkUrl) {
         cert.style.cursor = "pointer";
         cert.addEventListener("click", () => {
-          window.open(imageUrl, "_blank", "width=600,height=800");
+          if (linkUrl) {
+            window.open(linkUrl, "_blank");
+          } else if (imageUrl) {
+            window.open(imageUrl, "_blank", "width=600,height=800");
+          }
         });
       }
     });
@@ -920,7 +1225,7 @@ function initBrowser(el) {
   });
 }
 
-function initInbox(el) {
+function initInbox(el, sound) {
   const form = el.querySelector("#contact-form");
   const status = el.querySelector("#mail-status");
   form.addEventListener("submit", (e) => {
@@ -938,6 +1243,8 @@ function initInbox(el) {
       const mailto = `mailto:${PORTFOLIO_DATA.profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
       window.location.href = mailto;
       status.textContent = `✓ Message queued for delivery to ${PORTFOLIO_DATA.profile.email}`;
+      if (sound) sound.success();
+      if (window.mascot) window.mascot.celebrate("Hooray! Message queued for delivery! Sumit will get back to you shortly! 📧🎉");
     }, 1200);
   });
 }
@@ -947,6 +1254,8 @@ function initPaint(el) {
   const status = el.querySelector("#paint-status");
   const clearBtn = el.querySelector("#paint-clear");
   const toolBtns = el.querySelectorAll(".paint-tool");
+  const swatches = el.querySelectorAll(".paint-color-swatch");
+  const currentColorEl = el.querySelector("#paint-current-color");
   if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
@@ -955,8 +1264,9 @@ function initPaint(el) {
 
   let drawing = false;
   let tool = "brush";
-  const brushColor = "#000000";
-  const brushSize = 2;
+  let brushColor = "#000000";
+  const brushSize = 3;
+  let lastPos = null;
 
   const getPos = (e) => {
     const rect = canvas.getBoundingClientRect();
@@ -970,33 +1280,61 @@ function initPaint(el) {
     };
   };
 
-  const drawDot = (x, y) => {
+  const getColorName = (hex) => {
+    const names = {
+      "#000000": "black",
+      "#808080": "grey",
+      "#800000": "dark red",
+      "#808000": "olive",
+      "#008000": "dark green",
+      "#008080": "teal",
+      "#000080": "navy",
+      "#800080": "purple",
+      "#ffffff": "white",
+      "#c0c0c0": "light grey",
+      "#ff0000": "red",
+      "#ffff00": "yellow",
+      "#00ff00": "green",
+      "#00ffff": "cyan",
+      "#0000ff": "blue",
+      "#ff00ff": "magenta",
+    };
+    return names[hex] || hex;
+  };
+
+  const drawLine = (x1, y1, x2, y2) => {
     ctx.beginPath();
-    if (tool === "eraser") {
-      ctx.fillStyle = "#ffffff";
-      ctx.arc(x, y, brushSize + 1, 0, Math.PI * 2);
-    } else {
-      ctx.fillStyle = brushColor;
-      ctx.arc(x, y, brushSize / 2, 0, Math.PI * 2);
-    }
-    ctx.fill();
+    ctx.strokeStyle = tool === "eraser" ? "#ffffff" : brushColor;
+    ctx.lineWidth = tool === "eraser" ? 14 : brushSize;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
   };
 
   const startDraw = (e) => {
     e.preventDefault();
     drawing = true;
     const { x, y } = getPos(e);
-    drawDot(x, y);
+    lastPos = { x, y };
+    
+    // Draw a single dot in case the user just clicks/taps
+    ctx.beginPath();
+    ctx.fillStyle = tool === "eraser" ? "#ffffff" : brushColor;
+    ctx.arc(x, y, tool === "eraser" ? 7 : brushSize / 2, 0, Math.PI * 2);
+    ctx.fill();
   };
 
   const moveDraw = (e) => {
-    if (!drawing) return;
+    if (!drawing || !lastPos) return;
     e.preventDefault();
     const { x, y } = getPos(e);
-    drawDot(x, y);
+    drawLine(lastPos.x, lastPos.y, x, y);
+    lastPos = { x, y };
   };
 
-  const endDraw = () => { drawing = false; };
+  const endDraw = () => { drawing = false; lastPos = null; };
 
   canvas.addEventListener("mousedown", startDraw);
   canvas.addEventListener("mousemove", moveDraw);
@@ -1011,8 +1349,27 @@ function initPaint(el) {
       tool = btn.dataset.tool;
       toolBtns.forEach((b) => b.classList.toggle("active", b === btn));
       status.textContent = tool === "brush"
-        ? "Tool: Brush (black, 2px) — Click and drag to draw"
+        ? `Tool: Brush (${getColorName(brushColor)}, ${brushSize}px) — Click and drag to draw`
         : "Tool: Eraser — Click and drag to erase";
+    });
+  });
+
+  // Color Swatches
+  swatches.forEach((swatch) => {
+    swatch.addEventListener("click", () => {
+      brushColor = swatch.dataset.color;
+      if (currentColorEl) {
+        currentColorEl.style.backgroundColor = brushColor;
+      }
+      swatches.forEach((s) => s.classList.toggle("active", s === swatch));
+      
+      // Auto-switch to Brush if Eraser is active
+      if (tool === "eraser") {
+        tool = "brush";
+        toolBtns.forEach((b) => b.classList.toggle("active", b.dataset.tool === "brush"));
+      }
+      
+      status.textContent = `Tool: Brush (${getColorName(brushColor)}, ${brushSize}px) — Click and drag to draw`;
     });
   });
 
@@ -1020,23 +1377,90 @@ function initPaint(el) {
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     status.textContent = "Canvas cleared.";
+    if (window.mascot) window.mascot.celebrate("Fresh start! Paint something nostalgic! 🎨✨");
   });
 }
 
 function initEducation(el) {
-  // Certificate/Award click handlers
+  // Certificate/Award/Publication click handlers
   const certsContainer = el.querySelector("#certs-container");
   if (certsContainer) {
-    certsContainer.querySelectorAll("[data-cert-image]").forEach((cert) => {
+    certsContainer.querySelectorAll(".panel-outset").forEach((cert) => {
       const imageUrl = cert.dataset.certImage;
-      if (imageUrl) {
+      const linkUrl = cert.dataset.certLink;
+      if (imageUrl || linkUrl) {
         cert.style.cursor = "pointer";
         cert.addEventListener("click", () => {
-          window.open(imageUrl, "_blank", "width=600,height=800");
+          if (linkUrl) {
+            window.open(linkUrl, "_blank");
+          } else if (imageUrl) {
+            window.open(imageUrl, "_blank", "width=600,height=800");
+          }
         });
       }
     });
   }
+}
+
+function initStandaloneTerminal(el, sound) {
+  const input = el.querySelector("#standalone-terminal-input");
+  if (!input) return;
+  const terminal = el.querySelector("#standalone-terminal");
+
+  const commands = {
+    help: "Commands: help, dir, ver, skills, experience, projects, cls, echo, sudo, matrix, format",
+    ver: "Windows 95 MS-DOS Prompt Version 7.0",
+    dir: "SKILLS.EXE  EXPERIENCE.LOG  PROJECTS.HTM  README.TXT",
+    skills: Object.values(PORTFOLIO_DATA.skills).flat().join(", "),
+    experience: PORTFOLIO_DATA.experience.map((e) => `${e.title} @ ${e.company}`).join(" | "),
+    projects: PORTFOLIO_DATA.projects.map((p) => p.title).join(" | "),
+    cls: "__CLS__",
+    sudo: "__SUDO__",
+    matrix: "__MATRIX__",
+  };
+
+  const appendLine = (text, className = "terminal-line") => {
+    const inputRow = terminal.querySelector(".terminal-input-row");
+    const out = document.createElement("div");
+    out.className = className;
+    out.textContent = text;
+    terminal.insertBefore(out, inputRow);
+    terminal.scrollTop = terminal.scrollHeight;
+  };
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter") return;
+    const raw = input.value.trim();
+    const cmd = raw.toLowerCase();
+    const inputRow = terminal.querySelector(".terminal-input-row");
+
+    const echoLine = document.createElement("div");
+    echoLine.className = "terminal-line";
+    echoLine.innerHTML = `<span class="terminal-prompt">C:\\WINDOWS&gt;</span> ${input.value}`;
+    terminal.insertBefore(echoLine, inputRow);
+
+    if (cmd === "cls") {
+      terminal.querySelectorAll(".terminal-line:not(.terminal-input-row)").forEach((l) => l.remove());
+    } else if (cmd === "sudo" || cmd.startsWith("sudo ")) {
+      appendLine("Access denied. Elevated privileges require Windows NT.");
+      sound.error();
+    } else if (cmd === "matrix") {
+      startMatrixEffect(terminal, sound);
+    } else if (cmd === "format c:" || cmd === "format c:/" || cmd.startsWith("format c:")) {
+      appendLine("Proceed with format (Y/N)?");
+      setTimeout(() => triggerBSOD(sound), 1200);
+    } else if (commands[cmd.split(" ")[0]]) {
+      const key = cmd.split(" ")[0];
+      if (key !== "cls") appendLine(commands[key]);
+    } else if (cmd.startsWith("echo ")) {
+      appendLine(raw.slice(5));
+    } else if (cmd) {
+      appendLine(`'${cmd}' is not recognized as an internal or external command.`);
+    }
+
+    input.value = "";
+    terminal.scrollTop = terminal.scrollHeight;
+  });
 }
 
 /* ==========================================================================
@@ -1100,6 +1524,8 @@ function triggerBSOD(sound) {
   const bsod = document.getElementById("bsod");
   bsod.hidden = false;
   document.body.style.overflow = "hidden";
+  
+  if (window.mascot) window.mascot.dismiss();
 
   const dismiss = () => {
     bsod.hidden = true;
@@ -1188,6 +1614,197 @@ class RecycleBinManager {
 }
 
 /* ==========================================================================
+   Notification Manager
+   ========================================================================== */
+
+class NotificationManager {
+  constructor(sound) {
+    this.sound = sound;
+    this.desktop = document.getElementById("desktop");
+    this.messages = [
+      { text: "Coffee levels critical.", icon: "☕" },
+      { text: "Build succeeded.", icon: "✅" },
+      { text: "Bug escaped containment.", icon: "🐛" },
+      { text: "No bugs detected. Suspicious.", icon: "🧐" }
+    ];
+    this.scheduleNext();
+  }
+
+  show(text, icon = "ℹ️") {
+    const toast = document.createElement("div");
+    toast.className = "window sys-toast";
+    toast.role = "alert";
+    toast.style.minWidth = "260px";
+    toast.style.minHeight = "auto";
+    
+    toast.innerHTML = `
+      <div class="window-titlebar">
+        <span class="window-title">System Message</span>
+        <button type="button" class="window-btn" data-action="close" aria-label="Close">×</button>
+      </div>
+      <div class="window-body" style="padding: 10px;">
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <span style="font-size: 24px; filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.255));">${icon}</span>
+          <p style="margin: 0; font-family: var(--font-ui); font-size: 11px; line-height: 1.4; color: #000;">${text}</p>
+        </div>
+      </div>
+    `;
+
+    this.desktop.appendChild(toast);
+    
+    if (this.sound) {
+      if (text.includes("critical") || text.includes("escaped")) {
+        this.sound.error();
+      } else {
+        this.sound.beep(600, 0.1, "triangle", 0.05);
+      }
+    }
+
+    const closeBtn = toast.querySelector("[data-action='close']");
+    const dismiss = () => {
+      toast.classList.add("fade-out");
+      setTimeout(() => toast.remove(), 300);
+    };
+
+    closeBtn.addEventListener("click", dismiss);
+
+    // Auto-dismiss after 6 seconds
+    setTimeout(() => {
+      if (toast.parentElement) {
+        dismiss();
+      }
+    }, 6000);
+  }
+
+  scheduleNext() {
+    const delay = 15000 + Math.random() * 20000;
+    setTimeout(() => {
+      const msg = this.messages[Math.floor(Math.random() * this.messages.length)];
+      this.show(msg.text, msg.icon);
+      this.scheduleNext();
+    }, delay);
+  }
+}
+
+/* ==========================================================================
+   ByteBoy Mascot
+   ========================================================================== */
+
+class ByteBoyMascot {
+  constructor(sound) {
+    this.sound = sound;
+    this.desktop = document.getElementById("desktop");
+    this.messages = [
+      { text: "Tip: Double-click the Terminal icon to play with MS-DOS commands like 'matrix' or 'format c:'!", type: "tip" },
+      { text: "Tip: You can toggle the CRT monitor filter by clicking the tray button at the bottom-right!", type: "tip" },
+      { text: "Tip: Try dragging desktop icons to the Recycle Bin. Clicking it will empty it permanently!", type: "tip" },
+      { text: "Tip: Open Internet Explorer to view Sumit's web project showcase!", type: "tip" },
+      { text: "Why do programmers wear glasses? Because they can't C#! 🤓", type: "joke" },
+      { text: "There are 10 types of people: those who understand binary, and those who don't! 🤖", type: "joke" },
+      { text: "A SQL query walks into a bar, walks up to two tables and asks, 'Can I join you?' 🍺", type: "joke" },
+      { text: "How many programmers does it take to change a lightbulb? None, that's a hardware problem! 💡", type: "joke" },
+      { text: "Sumit's core backend systems have boosted enterprise throughput by 20%! Now that's performance! ⚡", type: "fact" },
+      { text: "Did you know? Sumit maintains 85% unit test coverage in enterprise Java/Spring Boot code! 🧪", type: "fact" },
+      { text: "Spot Award Winner! Sumit was awarded by Intellect Design Arena for outstanding project delivery! 🏆", type: "fact" }
+    ];
+    
+    this.el = null;
+    this.activeTimeout = null;
+
+    // Trigger mascot every 40 to 70 seconds
+    this.scheduleNext();
+  }
+
+  show() {
+    if (this.el || document.getElementById("bsod") && !document.getElementById("bsod").hidden) return;
+
+    const msg = this.messages[Math.floor(Math.random() * this.messages.length)];
+    
+    this.el = document.createElement("div");
+    this.el.className = "byteboy-container";
+    this.el.innerHTML = `
+      <div class="byteboy-bubble">
+        <div class="byteboy-bubble-header">
+          <span>ByteBoy</span>
+          <button type="button" class="byteboy-close" aria-label="Dismiss">×</button>
+        </div>
+        <p class="byteboy-text">${msg.text}</p>
+      </div>
+      <img src="assets/misc/bytebot-mascot.svg" alt="ByteBoy Mascot" class="byteboy-img">
+    `;
+
+    this.desktop.appendChild(this.el);
+    
+    if (this.sound) {
+      this.sound.beep(800, 0.1, "sine", 0.05);
+      setTimeout(() => this.sound.beep(1000, 0.08, "sine", 0.05), 100);
+    }
+
+    const closeBtn = this.el.querySelector(".byteboy-close");
+    closeBtn.addEventListener("click", () => this.dismiss());
+
+    // Auto-dismiss after 12 seconds
+    this.activeTimeout = setTimeout(() => this.dismiss(), 12000);
+  }
+
+  celebrate(text) {
+    if (document.getElementById("bsod") && !document.getElementById("bsod").hidden) return;
+    
+    if (this.el) {
+      const container = this.el;
+      container.remove();
+      this.el = null;
+      clearTimeout(this.activeTimeout);
+    }
+
+    this.el = document.createElement("div");
+    this.el.className = "byteboy-container";
+    this.el.innerHTML = `
+      <div class="byteboy-bubble celebrate">
+        <div class="byteboy-bubble-header">
+          <span>ByteBoy Achievement!</span>
+          <button type="button" class="byteboy-close" aria-label="Dismiss">×</button>
+        </div>
+        <p class="byteboy-text">${text}</p>
+      </div>
+      <img src="assets/misc/bytebot-mascot.svg" alt="ByteBoy Mascot" class="byteboy-img">
+    `;
+
+    this.desktop.appendChild(this.el);
+    
+    if (this.sound) {
+      this.sound.success();
+    }
+
+    const closeBtn = this.el.querySelector(".byteboy-close");
+    closeBtn.addEventListener("click", () => this.dismiss());
+
+    this.activeTimeout = setTimeout(() => this.dismiss(), 10000);
+  }
+
+  dismiss() {
+    if (!this.el) return;
+    clearTimeout(this.activeTimeout);
+    const container = this.el;
+    container.classList.add("fade-out");
+    setTimeout(() => {
+      if (this.el === container) {
+        container.remove();
+        this.el = null;
+      }
+    }, 400);
+  }
+
+  scheduleNext() {
+    const delay = 40000 + Math.random() * 30000;
+    setTimeout(() => {
+      this.show();
+      this.scheduleNext();
+    }, delay);
+  }
+}
+
+/* ==========================================================================
    Hit Counter
    ========================================================================== */
 
@@ -1261,6 +1878,9 @@ function buildDesktopIcons(wm, recycleBin) {
     icon.className = "desktop-icon";
     icon.draggable = true;
     icon.dataset.windowId = win.id;
+    if (win.tooltip) {
+      icon.setAttribute("data-tooltip", win.tooltip);
+    }
     icon.innerHTML = `
       <div class="desktop-icon-img">${win.icon}</div>
       <span class="desktop-icon-label">${win.label}</span>
@@ -1312,6 +1932,8 @@ function openWindow(id, wm) {
     "my-computer": renderMyComputer,
     network: renderNetwork,
     browser: renderBrowser,
+    resume: renderResumeWindow,
+    terminal: renderStandaloneTerminal,
     inbox: renderInbox,
     education: renderEducation,
     paint: renderPaint,
@@ -1335,10 +1957,56 @@ function updateClock() {
 }
 
 /* ==========================================================================
+   Wallpaper Animation Layer
+   ========================================================================== */
+
+function initWallpaperAnimation() {
+  const container = document.querySelector(".wallpaper-animation-container");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  // Floating Pixels
+  for (let i = 0; i < 20; i++) {
+    const pixel = document.createElement("div");
+    pixel.className = "floating-pixel";
+    pixel.style.left = `${Math.random() * 100}%`;
+    pixel.style.top = `${Math.random() * 100}%`;
+    pixel.style.animationDelay = `${Math.random() * 15}s`;
+    pixel.style.animationDuration = `${12 + Math.random() * 10}s`;
+    container.appendChild(pixel);
+  }
+
+  // Tiny Twinkling Stars (mostly top half)
+  for (let i = 0; i < 15; i++) {
+    const star = document.createElement("div");
+    star.className = "tiny-star";
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 45}%`;
+    star.style.animationDelay = `${Math.random() * 6}s`;
+    star.style.animationDuration = `${2 + Math.random() * 3}s`;
+    container.appendChild(star);
+  }
+
+  // Horizontal Floating Retro Clouds
+  for (let i = 0; i < 3; i++) {
+    const cloud = document.createElement("div");
+    cloud.className = "moving-cloud";
+    cloud.style.top = `${8 + i * 15}%`;
+    cloud.style.animationDelay = `${i * 15}s`;
+    cloud.style.animationDuration = `${45 + i * 25}s`;
+    container.appendChild(cloud);
+  }
+}
+
+
+/* ==========================================================================
    App Init
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+  applyMobileModeClass();
+
   const sound = new SoundEngine();
   const wm = new WindowManager(sound);
   const winamp = new WinampPlayer(sound);
@@ -1349,9 +2017,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buildDesktopIcons(wm, recycleBin);
   buildStartMenu(wm);
+  initWallpaperAnimation();
+  const notifier = new NotificationManager(sound);
+  window.mascot = new ByteBoyMascot(sound);
 
   document.addEventListener("mousemove", (e) => wm.onMouseMove(e));
   document.addEventListener("mouseup", () => wm.onMouseUp());
+  document.addEventListener("touchmove", (e) => wm.onTouchMove(e), { passive: false });
+  document.addEventListener("touchend", () => wm.onMouseUp());
+  document.addEventListener("touchcancel", () => wm.onMouseUp());
 
   const startBtn = document.getElementById("start-btn");
   const startMenu = document.getElementById("start-menu");
@@ -1388,9 +2062,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const soundToggle = document.getElementById("sound-toggle");
+  const soundVolume = document.getElementById("sound-volume");
+
+  // Sync initial UI state with SoundEngine (which loads from LocalStorage)
+  soundToggle.classList.toggle("active", !sound.enabled);
+  soundToggle.textContent = sound.enabled ? "🔊" : "🔇";
+  soundVolume.value = Math.round(sound.volume * 100);
+
   soundToggle.addEventListener("click", () => {
-    sound.enabled = !sound.enabled;
-    soundToggle.classList.toggle("active", !sound.enabled);
+    sound.toggle();
+    const isMuted = !sound.enabled;
+    soundToggle.classList.toggle("active", isMuted);
+    soundToggle.textContent = sound.enabled ? "🔊" : "🔇";
+    if (sound.enabled) sound.click();
+  });
+
+  soundVolume.addEventListener("input", (e) => {
+    const val = parseFloat(e.target.value) / 100;
+    sound.setVolume(val);
+    if (val > 0 && !sound.enabled) {
+      sound.toggle(true);
+      soundToggle.classList.remove("active");
+      soundToggle.textContent = "🔊";
+    } else if (val === 0 && sound.enabled) {
+      sound.toggle(false);
+      soundToggle.classList.add("active");
+      soundToggle.textContent = "🔇";
+    }
+  });
+
+  soundVolume.addEventListener("change", () => {
     if (sound.enabled) sound.click();
   });
 
@@ -1401,9 +2102,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   runBootSequence(() => {
     sound.startup();
-    openWindow("system-props", wm);
-    setTimeout(() => openWindow("my-computer", wm), 400);
   });
+
+  // Today's Mood widget logic
+  const moods = [
+    "Writing APIs...",
+    "Refactoring reality...",
+    "Drinking coffee...",
+    "Debugging destiny...",
+    "Deploying dreams...",
+    "Brewing Java...",
+    "Routing events...",
+    "Chasing bugs..."
+  ];
+  const moodTextEl = document.getElementById("mood-text");
+  const moodWidgetEl = document.getElementById("mood-widget");
+  if (moodTextEl && moodWidgetEl) {
+    let currentMoodIndex = Math.floor(Math.random() * moods.length);
+    moodTextEl.textContent = moods[currentMoodIndex];
+
+    moodWidgetEl.addEventListener("click", () => {
+      let nextIndex;
+      do {
+        nextIndex = Math.floor(Math.random() * moods.length);
+      } while (nextIndex === currentMoodIndex && moods.length > 1);
+      
+      currentMoodIndex = nextIndex;
+      moodTextEl.textContent = moods[currentMoodIndex];
+      
+      // Play retro audio click
+      if (sound) sound.click();
+      
+      // ByteBoy Mascot reaction
+      if (window.mascot) {
+        const reactions = [
+          "Sumit is working hard! Let's cheer him on! ☕☕",
+          "That mood is so retro! I love it! 💾✨",
+          "Keep coding, Sumit! You've got this! 🧪🚀",
+          "A solid developer mood. Time to commit! ⚙️😎"
+        ];
+        window.mascot.celebrate(reactions[Math.floor(Math.random() * reactions.length)]);
+      }
+    });
+  }
 
   updateClock();
   setInterval(updateClock, 30000);

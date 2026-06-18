@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Sumit Gupta — Retro Portfolio v1.0 (1996)</title>
-  <meta name="description" content="Sumit Gupta — Full Stack Developer portfolio on Windows 95">
+  <meta name="description" content="Sumit Gupta — Java Full-Stack Engineer portfolio on Windows 95">
+  <link rel="icon" type="image/x-icon" href="assets/icons/logo.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,6 +17,9 @@
   <!-- Main desktop canvas -->
   <div id="desktop-wrapper" class="desktop-wrapper">
     <div id="desktop" class="desktop" role="application" aria-label="Windows 95 Desktop">
+
+      <!-- Wallpaper animation layer -->
+      <div class="wallpaper-animation-container" aria-hidden="true"></div>
 
       <!-- Marquee welcome banner -->
       <div class="marquee-bar" aria-hidden="true">
@@ -36,14 +42,18 @@
       <div class="sticky-notes" aria-label="Desktop sticky notes">
         <div class="sticky-note sticky-note-1">
           <div class="sticky-note-header">📌 QUICK READ</div>
-          <p>Sumit is a Java Full-Stack Developer with 2+ years building scalable Spring Boot backends and Angular frontends for enterprise systems.</p>
-          <p>He delivers measurable impact—20% throughput gains, Kafka event pipelines, and 95% unit test coverage on production code.</p>
+          <p>Sumit is a Java Full-Stack Engineer with 2+ years engineering high-throughput enterprise systems using Spring Boot, Kafka, and Angular.</p>
+          <p>He delivers measurable impact—23% faster order processing, 27% fewer production incidents, and 85%+ unit test coverage.</p>
         </div>
         <div class="sticky-note sticky-note-2">
           <div class="sticky-note-header">📌 STACK</div>
-          <p>Core: Java · Spring Boot · Angular · SQL · Kafka</p>
-          <p>Also: React · Node.js · MongoDB · CI/CD · ELK</p>
+          <p>Core: Java 8+ · Spring Boot · Angular · Kafka · PostgreSQL</p>
+          <p>Also: TypeScript · React · Docker · AWS · ELK · Kubernetes</p>
           <p class="sticky-note-footer">— Hire me! 📧</p>
+        </div>
+        <div class="sticky-note sticky-note-3" id="mood-widget">
+          <div class="sticky-note-header">📌 TODAY'S MOOD</div>
+          <p id="mood-text" style="font-weight: bold; font-style: italic;">Loading mood...</p>
         </div>
       </div>
 
@@ -89,6 +99,12 @@
         </div>
       </div>
 
+      <!-- Hit counter -->
+      <div class="hit-counter" aria-label="Visitor counter">
+        <span class="hit-label">YOU ARE VISITOR #</span>
+        <span id="hit-counter-digits" class="hit-digits">000000</span>
+      </div>
+
       <!-- Taskbar -->
       <footer class="taskbar" role="toolbar" aria-label="Taskbar">
         <button type="button" id="start-btn" class="start-btn" aria-expanded="false" aria-haspopup="true">
@@ -108,16 +124,11 @@
         <div class="taskbar-tray">
           <button type="button" id="crt-toggle" class="tray-btn" title="Toggle CRT Monitor">📺 CRT</button>
           <button type="button" id="sound-toggle" class="tray-btn" title="Toggle System Sounds">🔊</button>
+          <input type="range" id="sound-volume" class="sound-volume-slider" min="0" max="100" value="50" title="System Volume" aria-label="System Volume">
           <span class="tray-clock" id="tray-clock">12:00 PM</span>
         </div>
       </footer>
     </div>
-  </div>
-
-  <!-- Pixel hit counter -->
-  <div class="hit-counter" aria-label="Visitor counter">
-    <span class="hit-label">YOU ARE VISITOR #</span>
-    <span id="hit-counter-digits" class="hit-digits">000000</span>
   </div>
 
   <!-- Blue Screen of Death -->
@@ -145,6 +156,6 @@
     </div>
   </div>
 
-  <script src="app.js" defer></script>
+  <script src="app.js?v=2" defer></script>
 </body>
 </html>

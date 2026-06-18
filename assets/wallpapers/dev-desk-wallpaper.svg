@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Neon green glow filter -->
+    <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur" />
+      <feComponentTransfer in="blur" result="glow">
+        <feFuncA type="linear" slope="2" />
+      </feComponentTransfer>
+      <feFlood flood-color="#39ff14" result="flood" />
+      <feComposite in="flood" in2="glow" operator="in" result="neon" />
+      <feMerge>
+        <feMergeNode in="neon" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Neon pink glow filter -->
+    <filter id="glow-pink" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur" />
+      <feComponentTransfer in="blur" result="glow">
+        <feFuncA type="linear" slope="2.5" />
+      </feComponentTransfer>
+      <feFlood flood-color="#ff007f" result="flood" />
+      <feComposite in="flood" in2="glow" operator="in" result="neon" />
+      <feMerge>
+        <feMergeNode in="neon" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Screen glow filter -->
+    <filter id="screen-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="100" y2="0" stroke="#000000" stroke-width="1" opacity="0.25" />
+    </pattern>
+  </defs>
+
+  <!-- Background wall -->
+  <rect width="800" height="600" fill="#0c1818" />
+  
+  <!-- Subtle brick pattern on wall -->
+  <path d="M 0,100 L 800,100 M 0,200 L 800,200 M 0,300 L 800,300 M 0,400 L 800,400" stroke="#102525" stroke-width="2" />
+  <path d="M 50,0 L 50,100 M 150,100 L 150,200 M 250,200 L 250,300 M 350,300 L 350,400 M 450,0 L 450,100 M 550,100 L 550,200 M 650,200 L 650,300 M 750,300 L 750,400" stroke="#102525" stroke-width="2" />
+  
+  <!-- Desk surface (wood block) -->
+  <path d="M 0,450 L 800,450 L 800,600 L 0,600 Z" fill="#2d1f18" />
+  <rect x="0" y="450" width="800" height="15" fill="#1f1510" />
+
+  <!-- Neon Cactus Lamp on the right -->
+  <!-- Base -->
+  <rect x="670" y="430" width="60" height="20" rx="3" fill="#15151a" stroke="#2a2a35" stroke-width="1.5" />
+  <!-- Glowing Neon Cactus -->
+  <g filter="url(#glow-green)">
+    <!-- Main stem -->
+    <path d="M 700,430 L 700,310" stroke="#39ff14" stroke-width="7" stroke-linecap="round" fill="none" />
+    <!-- Left branch -->
+    <path d="M 700,370 L 675,370 L 675,335" stroke="#39ff14" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <!-- Right branch -->
+    <path d="M 700,350 L 725,350 L 725,315" stroke="#39ff14" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+  <!-- Cord and plug representation -->
+  <path d="M 725,445 Q 750,455 765,490" fill="none" stroke="#111" stroke-width="2.5" />
+
+  <!-- CRT Monitor Setup -->
+  <!-- Monitor Base -->
+  <ellipse cx="400" cy="455" rx="90" ry="12" fill="#888888" stroke="#555555" stroke-width="2" />
+  <!-- Monitor Neck -->
+  <path d="M 375,390 L 360,450 L 440,450 L 425,390 Z" fill="#a0a0a0" stroke="#666666" stroke-width="2" />
+  
+  <!-- Back Shell -->
+  <path d="M 230,130 L 570,130 L 520,390 L 280,390 Z" fill="#7d7d7d" stroke="#525252" stroke-width="2" />
+  <!-- Cooling Vents on Back Shell -->
+  <line x1="320" y1="150" x2="320" y2="220" stroke="#444" stroke-width="4" stroke-linecap="round" />
+  <line x1="350" y1="150" x2="350" y2="220" stroke="#444" stroke-width="4" stroke-linecap="round" />
+  <line x1="380" y1="150" x2="380" y2="220" stroke="#444" stroke-width="4" stroke-linecap="round" />
+  <line x1="420" y1="150" x2="420" y2="220" stroke="#444" stroke-width="4" stroke-linecap="round" />
+  <line x1="450" y1="150" x2="450" y2="220" stroke="#444" stroke-width="4" stroke-linecap="round" />
+  <line x1="480" y1="150" x2="480" y2="220" stroke="#444" stroke-width="4" stroke-linecap="round" />
+
+  <!-- Main Front Bezel -->
+  <rect x="200" y="100" width="400" height="300" rx="18" fill="#bfbfbf" stroke="#7e7e7e" stroke-width="3" />
+  <!-- Inner Screen Bevel (Beige-grey shadow) -->
+  <rect x="225" y="125" width="350" height="240" rx="8" fill="#9c9c9c" stroke="#606060" stroke-width="2" />
+  
+  <!-- CRT Screen (Glowing dark green matrix) -->
+  <rect x="235" y="135" width="330" height="220" rx="6" fill="#031408" stroke="#123d1c" stroke-width="1.5" />
+  
+  <!-- Glowing code screen contents -->
+  <g filter="url(#screen-glow)">
+    <text x="250" y="170" fill="#39ff14" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">C:\DOS&gt; cd \portfolio</text>
+    <text x="250" y="195" fill="#39ff14" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">C:\PORTFOLIO&gt; make developer-desk</text>
+    <text x="250" y="225" fill="#39ff14" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">Compiling desk_elements.cpp...</text>
+    <text x="250" y="250" fill="#39ff14" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">  Adding coffee_mug... DONE</text>
+    <text x="250" y="270" fill="#39ff14" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">  Adding rubber_duck... DONE</text>
+    <text x="250" y="290" fill="#39ff14" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">  Adding pizza_slice... DONE</text>
+    <text x="250" y="325" fill="#ff2222" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold" blink="true">WARN: 404 bugs found. fixing...</text>
+  </g>
+
+  <!-- Scanline Overlay -->
+  <rect x="235" y="135" width="330" height="220" rx="6" fill="url(#scanlines)" pointer-events="none" />
+
+  <!-- Bezel Buttons & Details -->
+  <!-- Power LED (Glowing green) -->
+  <circle cx="560" cy="380" r="4" fill="#39ff14" filter="url(#screen-glow)" />
+  <circle cx="560" cy="380" r="2" fill="#ffffff" />
+  <!-- Power Label -->
+  <text x="548" y="392" fill="#444" font-family="sans-serif" font-size="7" font-weight="bold">POWER</text>
+  <!-- Control Knobs -->
+  <circle cx="250" cy="380" r="4" fill="#a0a0a0" stroke="#777" stroke-width="1" />
+  <circle cx="265" cy="380" r="4" fill="#a0a0a0" stroke="#777" stroke-width="1" />
+  <circle cx="280" cy="380" r="4" fill="#a0a0a0" stroke="#777" stroke-width="1" />
+  <!-- Brand Badge (Gold star / logo) -->
+  <polygon points="400,372 403,378 409,379 405,383 406,389 400,386 394,389 395,383 391,379 397,378" fill="#ccaa00" stroke="#887700" stroke-width="0.5" />
+  <text x="390" y="393" fill="#666" font-family="sans-serif" font-size="6" font-weight="bold">SUPREME</text>
+
+  <!-- Sticky Note on Left Bezel -->
+  <g transform="rotate(-3, 210, 240)">
+    <!-- Sticky shadow -->
+    <rect x="157" y="202" width="60" height="60" fill="rgba(0,0,0,0.2)" />
+    <!-- Sticky body -->
+    <rect x="155" y="200" width="60" height="60" fill="#ffff95" stroke="#e6d800" stroke-width="1" />
+    <path d="M 155,200 L 175,200" stroke="#3377aa" stroke-width="2.5" />
+    <!-- Sticky content -->
+    <text x="160" y="215" fill="#111" font-family="'Comic Sans MS', 'Comic Sans', cursive" font-size="8" font-weight="bold">Fix bug.</text>
+    <text x="160" y="230" fill="#111" font-family="'Comic Sans MS', 'Comic Sans', cursive" font-size="8" font-weight="bold">Create 3</text>
+    <text x="160" y="245" fill="#111" font-family="'Comic Sans MS', 'Comic Sans', cursive" font-size="8" font-weight="bold">more.</text>
+  </g>
+
+  <!-- Pizza Slice on Plate on the left -->
+  <!-- Plate shadow -->
+  <ellipse cx="142" cy="517" rx="72" ry="22" fill="rgba(0,0,0,0.3)" />
+  <!-- Paper Plate -->
+  <ellipse cx="140" cy="515" rx="70" ry="20" fill="#fdfdfd" stroke="#e0e0e0" stroke-width="1.5" />
+  <ellipse cx="140" cy="515" rx="55" ry="15" fill="none" stroke="#f0f0f0" stroke-width="2" stroke-dasharray="3,3" />
+  <!-- Slice Crust -->
+  <path d="M 85,520 Q 115,492 145,528" fill="none" stroke="#d49e5d" stroke-width="12" stroke-linecap="round" />
+  <path d="M 85,520 Q 115,492 145,528" fill="none" stroke="#b07635" stroke-width="4" stroke-linecap="round" />
+  <!-- Cheese/Pizza Base -->
+  <path d="M 90,515 L 180,485 L 138,522 Z" fill="#ffce1b" stroke="#e05300" stroke-width="1.5" />
+  <!-- Pepperoni chunks -->
+  <circle cx="115" cy="512" r="7" fill="#b81d13" stroke="#800c06" stroke-width="1" />
+  <circle cx="138" cy="505" r="6" fill="#b81d13" stroke="#800c06" stroke-width="1" />
+  <circle cx="152" cy="498" r="5" fill="#b81d13" stroke="#800c06" stroke-width="1" />
+  <!-- Cheese melt drops -->
+  <circle cx="100" cy="520" r="3" fill="#ffce1b" />
+  <circle cx="130" cy="524" r="2.5" fill="#ffce1b" />
+
+  <!-- Steaming Coffee Mug -->
+  <!-- Mug Shadow -->
+  <ellipse cx="270" cy="505" rx="35" ry="10" fill="rgba(0,0,0,0.35)" />
+  <!-- Handle -->
+  <path d="M 285,465 Q 310,480 285,495" fill="none" stroke="#b31212" stroke-width="8" stroke-linecap="round" />
+  <path d="M 285,465 Q 310,480 285,495" fill="none" stroke="#db2424" stroke-width="4" stroke-linecap="round" />
+  <!-- Mug Main Body -->
+  <rect x="240" y="450" width="50" height="50" rx="4" fill="#db2424" stroke="#b31212" stroke-width="2" />
+  <!-- Mug Highlight -->
+  <path d="M 245,454 L 245,496" stroke="#ff8080" stroke-width="2" stroke-linecap="round" />
+  <!-- Coffee Liquid surface (top inset ellipse) -->
+  <ellipse cx="265" cy="452" rx="21" ry="3" fill="#522a13" />
+  <ellipse cx="265" cy="452" rx="17" ry="1.5" fill="#3d1f0e" />
+  <!-- Steam (Glowing paths) -->
+  <path d="M 255,440 Q 248,425 258,410 T 252,390" fill="none" stroke="#d5e2e8" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2,2" opacity="0.7" filter="url(#screen-glow)" />
+  <path d="M 275,440 Q 282,425 272,410 T 278,390" fill="none" stroke="#d5e2e8" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2,2" opacity="0.7" filter="url(#screen-glow)" />
+
+  <!-- Yellow Rubber Duck -->
+  <g transform="translate(-10, -5)">
+    <!-- Duck Shadow -->
+    <ellipse cx="585" cy="510" rx="32" ry="10" fill="rgba(0,0,0,0.3)" />
+    <!-- Duck Body -->
+    <ellipse cx="580" cy="495" rx="28" ry="20" fill="#ffd500" stroke="#ccaa00" stroke-width="1.5" />
+    <!-- Duck Wing -->
+    <ellipse cx="575" cy="495" rx="14" ry="9" fill="#ffea55" stroke="#ccaa00" stroke-width="1" />
+    <!-- Duck Neck -->
+    <path d="M 595,490 Q 602,475 595,465" fill="none" stroke="#ffd500" stroke-width="12" stroke-linecap="round" />
+    <!-- Duck Head -->
+    <circle cx="595" cy="460" r="14" fill="#ffd500" stroke="#ccaa00" stroke-width="1.5" />
+    <!-- Duck Beak -->
+    <path d="M 607,456 Q 618,458 607,465 Z" fill="#ff7700" stroke="#cc5500" stroke-width="1" />
+    <!-- Duck Eye -->
+    <circle cx="598" cy="456" r="2" fill="#000000" />
+    <!-- Duck Tail -->
+    <path d="M 552,492 C 548,485 548,480 552,478 C 556,482 558,488 558,492 Z" fill="#ffd500" stroke="#ccaa00" stroke-width="1.5" />
+  </g>
+
+  <!-- Glowing Neon Lamp Light Cone (Soft gradient overlay) -->
+  <!-- Transparent overlay mimicking neon lamp glow on the desk -->
+  <ellipse cx="700" cy="450" rx="140" ry="40" fill="url(#neon-desk-glow)" opacity="0.35" pointer-events="none" />
+  
+  <defs>
+    <!-- Desk glow radial gradient -->
+    <radialGradient id="neon-desk-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#39ff14" stop-opacity="1" />
+      <stop offset="50%" stop-color="#39ff14" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#39ff14" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>
