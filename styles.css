@@ -863,4 +863,160 @@ body.mobile-mode .desktop-icon[data-tooltip]:hover::after {
   border: 1px inset var(--grey);
 }
 
+/* Synthwave Neon Theme Overrides */
+body.theme-synthwave {
+  background-color: #0d0b18 !important;
+  background-image: linear-gradient(rgba(255, 0, 128, 0.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 0, 128, 0.08) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+}
+body.theme-synthwave .desktop-wrapper,
+body.theme-synthwave .desktop {
+  background: transparent !important;
+}
+body.theme-synthwave .window {
+  background-color: #161224 !important;
+  color: #00f0ff !important;
+  border: 2px solid #ff007f !important;
+  box-shadow: 3px 3px 0 #00f0ff !important;
+}
+body.theme-synthwave .window-titlebar {
+  background: linear-gradient(90deg, #590099, #120024) !important;
+  color: #ffffff !important;
+}
+body.theme-synthwave .window.focused .window-titlebar {
+  background: linear-gradient(90deg, #ff007f, #7a00ff) !important;
+  color: #ffffff !important;
+}
+body.theme-synthwave .window-body {
+  background-color: #161224 !important;
+  color: #e2d9f3 !important;
+}
+body.theme-synthwave .panel-inset {
+  background-color: #090710 !important;
+  color: #00f0ff !important;
+  border: 2px solid #ff007f !important;
+}
+body.theme-synthwave .panel-outset {
+  background-color: #1c172e !important;
+  color: #00f0ff !important;
+  border: 2px solid #ff007f !important;
+}
+body.theme-synthwave .btn-90s,
+body.theme-synthwave .start-btn,
+body.theme-synthwave .taskbar-win-btn,
+body.theme-synthwave .window-btn {
+  background-color: #1e1333 !important;
+  color: #00f0ff !important;
+  border: 2px solid #00f0ff !important;
+  box-shadow: 1px 1px 0 #ff007f !important;
+}
+body.theme-synthwave .btn-90s:active,
+body.theme-synthwave .start-btn:active,
+body.theme-synthwave .taskbar-win-btn.active,
+body.theme-synthwave .window-btn:active {
+  border-style: solid !important;
+  box-shadow: none !important;
+  background-color: #ff007f !important;
+  color: #ffffff !important;
+}
+body.theme-synthwave .taskbar {
+  background-color: #120d20 !important;
+  border-top: 2px solid #ff007f !important;
+}
+body.theme-synthwave .taskbar-tray {
+  background-color: #090710 !important;
+  border: 2px solid #00f0ff !important;
+}
+body.theme-synthwave .start-menu {
+  background-color: #161224 !important;
+  color: #00f0ff !important;
+  border: 2px solid #ff007f !important;
+  box-shadow: 3px 3px 0 #00f0ff !important;
+}
+body.theme-synthwave .start-menu-list li button {
+  color: #e2d9f3 !important;
+}
+body.theme-synthwave .start-menu-list li button:hover {
+  background-color: #ff007f !important;
+  color: #ffffff !important;
+}
+body.theme-synthwave .start-menu-banner {
+  background: linear-gradient(180deg, #ff007f, #7a00ff) !important;
+  color: #ffffff !important;
+}
+body.theme-synthwave a {
+  color: #ff007f !important;
+  text-decoration: underline;
+}
+body.theme-synthwave .tab-btn {
+  background-color: #1c172e !important;
+  color: #00f0ff !important;
+  border: 2px solid #ff007f !important;
+}
+body.theme-synthwave .tab-btn.active {
+  background-color: #161224 !important;
+  color: #ff007f !important;
+  border-bottom: 2px solid #161224 !important;
+}
+body.theme-synthwave .tab-panel {
+  background-color: #161224 !important;
+  color: #e2d9f3 !important;
+  border: 2px solid #ff007f !important;
+}
+body.theme-synthwave .tree-folder:hover {
+  background: #ff007f !important;
+  color: #ffffff !important;
+}
+body.theme-synthwave .intranet-table th {
+  background-color: #ff007f !important;
+  color: #ffffff !important;
+}
+body.theme-synthwave .intranet-table tr:nth-child(even) {
+  background-color: #0e0a16 !important;
+}
+body.theme-synthwave .intranet-table tr:hover, 
+body.theme-synthwave .intranet-table tr.selected {
+  background-color: #ff007f !important;
+  color: #ffffff !important;
+}
+body.theme-synthwave .exp-detail {
+  background-color: #090710 !important;
+  color: #e2d9f3 !important;
+  border: 2px solid #ff007f !important;
+}
+body.theme-synthwave .tag {
+  background-color: #1e1333 !important;
+  color: #00f0ff !important;
+  border: 1px solid #ff007f !important;
+}
+body.theme-synthwave .marquee-bar {
+  background: linear-gradient(90deg, #ff007f, #7a00ff) !important;
+  color: #ffffff !important;
+}
+body.theme-synthwave .construction-badge {
+  background-color: #ff007f !important;
+  color: #ffffff !important;
+  border: 3px ridge #00f0ff !important;
+}
+body.theme-synthwave .hit-counter {
+  background-color: #090710 !important;
+  border: 2px inset #ff007f !important;
+}
+body.theme-synthwave .hit-digit {
+  background-color: #120d20 !important;
+  color: #ff007f !important;
+  border-color: #ff007f !important;
+}
+body.theme-synthwave .sticky-note {
+  background: #251635 !important;
+  border-color: #ff007f !important;
+  color: #e2d9f3 !important;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.45) !important;
+}
+body.theme-synthwave .sticky-note-header {
+  color: #ff007f !important;
+  border-bottom-color: #ff007f !important;
+}
+
 

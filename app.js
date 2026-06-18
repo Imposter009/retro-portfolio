@@ -133,7 +133,7 @@ const WINDOWS = [
   { id: "resume", icon: "📄", label: "Resume.doc", title: "Resume.doc — Notepad", tooltip: "Contains caffeine-powered code.", width: 450, height: 350, x: 140, y: 120 },
   { id: "terminal", icon: "🖥️", label: "Terminal", title: "MS-DOS Prompt", tooltip: "Definitely not hacking.", width: 500, height: 380, x: 100, y: 100 },
   { id: "inbox", icon: "📧", label: "Inbox (Outlook)", title: "Outlook Express — New Message", tooltip: "Contact Sumit", width: 480, height: 440, x: 240, y: 120 },
-  { id: "education", icon: "🎓", label: "Education", title: "Control Panel — Education Settings", tooltip: "Degrees & Certifications", width: 460, height: 360, x: 300, y: 80 },
+  { id: "education", icon: "⚙️", label: "Control Panel", title: "Control Panel — Settings", tooltip: "Settings & Appearance", width: 480, height: 380, x: 300, y: 80 },
   { id: "paint", icon: "🎨", label: "Paint", title: "untitled — Paint", tooltip: "Paintbrush.exe", width: 500, height: 420, x: 140, y: 90 },
 ];
 
@@ -299,14 +299,42 @@ class WinampPlayer {
     this.playing = false;
     this.trackIndex = 0;
     this.tracks = [
-      "01. MODEM_DIALUP.WAV",
-      "02. SYNTHWAVE_95.MID",
-      "03. KAFKA_PIPELINE.MOD",
-      "04. GEOCITIES_DREAM.WAV",
+      "01. TUJHE_DEKHA_DDLJ.MID",
+      "02. CHURA_KE_DIL_MERA.MID",
+      "03. DHEERE_DHEERE_SE.MID",
+      "04. MODEM_DIALUP.WAV",
     ];
-    this.interval = null;
+    this.timeout = null;
     this.oscillators = [];
-    this.notes = [220, 277, 330, 392, 440, 330, 277, 220];
+    this.trackNotes = {
+      0: [ // "Tujhe Dekha Toh" (DDLJ)
+        { f: 261.63, d: 2 }, { f: 293.66, d: 2 }, { f: 329.63, d: 3 }, { f: 261.63, d: 2 }, { f: 293.66, d: 4 },
+        { f: 329.63, d: 2 }, { f: 392.00, d: 2 }, { f: 349.23, d: 2 }, { f: 329.63, d: 2 }, { f: 293.66, d: 6 },
+        { f: 0, d: 2 }, // rest
+        { f: 261.63, d: 2 }, { f: 293.66, d: 2 }, { f: 329.63, d: 3 }, { f: 392.00, d: 2 }, { f: 349.23, d: 4 },
+        { f: 329.63, d: 2 }, { f: 293.66, d: 2 }, { f: 261.63, d: 2 }, { f: 261.63, d: 6 },
+        { f: 0, d: 4 }
+      ],
+      1: [ // "Chura Ke Dil Mera"
+        { f: 329.63, d: 2 }, { f: 392.00, d: 2 }, { f: 440.00, d: 2 }, { f: 493.88, d: 3 }, { f: 493.88, d: 2 },
+        { f: 493.88, d: 2 }, { f: 523.25, d: 2 }, { f: 493.88, d: 2 }, { f: 440.00, d: 2 }, { f: 392.00, d: 2 }, { f: 440.00, d: 6 },
+        { f: 0, d: 2 },
+        { f: 329.63, d: 2 }, { f: 392.00, d: 2 }, { f: 440.00, d: 2 }, { f: 493.88, d: 3 }, { f: 493.88, d: 2 },
+        { f: 493.88, d: 2 }, { f: 523.25, d: 2 }, { f: 493.88, d: 2 }, { f: 440.00, d: 2 }, { f: 392.00, d: 2 }, { f: 440.00, d: 6 },
+        { f: 0, d: 4 }
+      ],
+      2: [ // "Dheere Dheere Se"
+        { f: 440.00, d: 2 }, { f: 493.88, d: 2 }, { f: 523.25, d: 3 }, { f: 523.25, d: 2 }, { f: 523.25, d: 2 },
+        { f: 493.88, d: 2 }, { f: 440.00, d: 2 }, { f: 493.88, d: 2 }, { f: 523.25, d: 2 }, { f: 587.33, d: 2 }, { f: 493.88, d: 6 },
+        { f: 0, d: 2 },
+        { f: 392.00, d: 2 }, { f: 440.00, d: 2 }, { f: 493.88, d: 3 }, { f: 493.88, d: 2 }, { f: 493.88, d: 2 },
+        { f: 440.00, d: 2 }, { f: 392.00, d: 2 }, { f: 440.00, d: 2 }, { f: 493.88, d: 2 }, { f: 523.25, d: 2 }, { f: 440.00, d: 6 },
+        { f: 0, d: 4 }
+      ],
+      3: [ // Standard dialup sound
+        { f: 220, d: 2 }, { f: 277, d: 2 }, { f: 330, d: 2 }, { f: 392, d: 2 }, { f: 440, d: 2 }, { f: 330, d: 2 }, { f: 277, d: 2 }, { f: 220, d: 2 }
+      ]
+    };
     this.noteIndex = 0;
 
     this.visEl = document.getElementById("winamp-vis");
@@ -347,21 +375,38 @@ class WinampPlayer {
     this.playing = true;
     this.playBtn.classList.add("active");
     this.playBtn.textContent = "❚❚";
+    this.playNextNote();
+  }
 
-    this.interval = setInterval(() => {
-      const freq = this.notes[this.noteIndex % this.notes.length];
-      const vol = (this.volumeEl.value / 100) * 0.35; // Increased multiplier for audible playback
-      this.sound.beep(freq, 0.18, "triangle", vol);
+  playNextNote() {
+    if (!this.playing) return;
+
+    const trackNotes = this.trackNotes[this.trackIndex] || this.trackNotes[0];
+    const note = trackNotes[this.noteIndex % trackNotes.length];
+    
+    if (note) {
+      const baseTime = 90; // Base duration of 1 beat in ms
+      const durationMs = note.d * baseTime;
+      
+      if (note.f > 0) {
+        const vol = (this.volumeEl.value / 100) * 0.35;
+        this.sound.beep(note.f, (durationMs * 0.85) / 1000, "triangle", vol);
+      }
+      
       this.animateVis();
       this.noteIndex++;
-    }, 280);
+      
+      this.timeout = setTimeout(() => this.playNextNote(), durationMs);
+    } else {
+      this.timeout = setTimeout(() => this.playNextNote(), 300);
+    }
   }
 
   pause() {
     this.playing = false;
     this.playBtn.classList.remove("active");
     this.playBtn.textContent = "▶";
-    clearInterval(this.interval);
+    clearTimeout(this.timeout);
   }
 
   stop() {
@@ -372,15 +417,27 @@ class WinampPlayer {
   }
 
   prevTrack() {
+    const wasPlaying = this.playing;
+    this.pause();
     this.trackIndex = (this.trackIndex - 1 + this.tracks.length) % this.tracks.length;
+    this.noteIndex = 0;
     this.updateTrackDisplay();
     this.sound.click();
+    if (wasPlaying) {
+      this.play();
+    }
   }
 
   nextTrack() {
+    const wasPlaying = this.playing;
+    this.pause();
     this.trackIndex = (this.trackIndex + 1) % this.tracks.length;
+    this.noteIndex = 0;
     this.updateTrackDisplay();
     this.sound.click();
+    if (wasPlaying) {
+      this.play();
+    }
   }
 
   animateVis() {
@@ -927,11 +984,33 @@ function renderEducation() {
     .join("");
 
   return `
-    <p style="margin-bottom:8px;font-weight:bold;">🎓 Add/Remove Programs — Education & Certifications</p>
-    ${items}
-    <div class="panel-inset">
-      <strong>Installed Certificates & Awards:</strong>
-      <div id="certs-container" style="margin-top:6px;">${certs}</div>
+    <div class="tab-bar">
+      <button type="button" class="tab-btn active" data-tab="edu">Add/Remove Programs</button>
+      <button type="button" class="tab-btn" data-tab="display">Display Properties</button>
+    </div>
+    <div class="tab-panel active" data-panel="edu">
+      <p style="margin-bottom:8px;font-weight:bold;">🎓 Education & Certifications</p>
+      ${items}
+      <div class="panel-inset">
+        <strong>Installed Certificates, Awards & Publications:</strong>
+        <div id="certs-container" style="margin-top:6px;">${certs}</div>
+      </div>
+    </div>
+    <div class="tab-panel" data-panel="display">
+      <p style="margin-bottom:8px;font-weight:bold;">🖥️ Desktop Theme Settings</p>
+      <div class="panel-inset" style="padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+        <p>Choose a color scheme for your 90s desktop:</p>
+        <div class="field-row">
+          <label style="min-width: 60px;">Theme:</label>
+          <select id="theme-selector" aria-label="Desktop Theme Selector">
+            <option value="teal">Windows 95 Classic Teal</option>
+            <option value="synthwave">Synthwave Neon (Dark Mode)</option>
+          </select>
+        </div>
+        <div style="border-top: 1px dashed var(--dark); margin: 8px 0; padding-top: 8px;">
+          <p style="font-size: 9px; color: var(--dark); font-style: italic;">"Synthwave Neon is a gorgeous dark appearance scheme inspired by 80s/90s chiptune, synthwave aesthetic, and dark mode developer layouts."</p>
+        </div>
+      </div>
     </div>
   `;
 }
@@ -1382,6 +1461,8 @@ function initPaint(el) {
 }
 
 function initEducation(el) {
+  initTabs(el);
+
   // Certificate/Award/Publication click handlers
   const certsContainer = el.querySelector("#certs-container");
   if (certsContainer) {
@@ -1398,6 +1479,19 @@ function initEducation(el) {
           }
         });
       }
+    });
+  }
+
+  // Theme Selector handling
+  const selector = el.querySelector("#theme-selector");
+  if (selector) {
+    const activeTheme = localStorage.getItem("retro_portfolio_theme") || "teal";
+    selector.value = activeTheme;
+    
+    selector.addEventListener("change", (e) => {
+      const theme = e.target.value;
+      localStorage.setItem("retro_portfolio_theme", theme);
+      applyTheme(theme);
     });
   }
 }
@@ -1703,7 +1797,7 @@ class ByteBoyMascot {
       { text: "There are 10 types of people: those who understand binary, and those who don't! 🤖", type: "joke" },
       { text: "A SQL query walks into a bar, walks up to two tables and asks, 'Can I join you?' 🍺", type: "joke" },
       { text: "How many programmers does it take to change a lightbulb? None, that's a hardware problem! 💡", type: "joke" },
-      { text: "Sumit's core backend systems have boosted enterprise throughput by 20%! Now that's performance! ⚡", type: "fact" },
+      { text: "Sumit's core backend systems have boosted enterprise throughput by 23%! Now that's performance! ⚡", type: "fact" },
       { text: "Did you know? Sumit maintains 85% unit test coverage in enterprise Java/Spring Boot code! 🧪", type: "fact" },
       { text: "Spot Award Winner! Sumit was awarded by Intellect Design Arena for outstanding project delivery! 🏆", type: "fact" }
     ];
@@ -1729,11 +1823,17 @@ class ByteBoyMascot {
           <button type="button" class="byteboy-close" aria-label="Dismiss">×</button>
         </div>
         <p class="byteboy-text">${msg.text}</p>
+        <div class="byteboy-actions" style="margin-top: 6px; display: flex; gap: 6px;">
+          <button type="button" class="btn-90s btn-mascot-action" data-action="joke" style="padding: 1px 4px; min-width: auto; font-size: 8px; line-height: 1;">Tell Joke</button>
+          <button type="button" class="btn-90s btn-mascot-action" data-action="fact" style="padding: 1px 4px; min-width: auto; font-size: 8px; line-height: 1;">Tell Fact</button>
+        </div>
       </div>
       <img src="assets/misc/bytebot-mascot.svg" alt="ByteBoy Mascot" class="byteboy-img">
     `;
 
     this.desktop.appendChild(this.el);
+    this.initDraggableMascot(this.el);
+    this.bindMascotActions(this.el);
     
     if (this.sound) {
       this.sound.beep(800, 0.1, "sine", 0.05);
@@ -1743,8 +1843,7 @@ class ByteBoyMascot {
     const closeBtn = this.el.querySelector(".byteboy-close");
     closeBtn.addEventListener("click", () => this.dismiss());
 
-    // Auto-dismiss after 12 seconds
-    this.activeTimeout = setTimeout(() => this.dismiss(), 12000);
+    this.activeTimeout = setTimeout(() => this.dismiss(), 25000);
   }
 
   celebrate(text) {
@@ -1766,11 +1865,17 @@ class ByteBoyMascot {
           <button type="button" class="byteboy-close" aria-label="Dismiss">×</button>
         </div>
         <p class="byteboy-text">${text}</p>
+        <div class="byteboy-actions" style="margin-top: 6px; display: flex; gap: 6px;">
+          <button type="button" class="btn-90s btn-mascot-action" data-action="joke" style="padding: 1px 4px; min-width: auto; font-size: 8px; line-height: 1;">Tell Joke</button>
+          <button type="button" class="btn-90s btn-mascot-action" data-action="fact" style="padding: 1px 4px; min-width: auto; font-size: 8px; line-height: 1;">Tell Fact</button>
+        </div>
       </div>
       <img src="assets/misc/bytebot-mascot.svg" alt="ByteBoy Mascot" class="byteboy-img">
     `;
 
     this.desktop.appendChild(this.el);
+    this.initDraggableMascot(this.el);
+    this.bindMascotActions(this.el);
     
     if (this.sound) {
       this.sound.success();
@@ -1779,7 +1884,136 @@ class ByteBoyMascot {
     const closeBtn = this.el.querySelector(".byteboy-close");
     closeBtn.addEventListener("click", () => this.dismiss());
 
-    this.activeTimeout = setTimeout(() => this.dismiss(), 10000);
+    this.activeTimeout = setTimeout(() => this.dismiss(), 20000);
+  }
+
+  initDraggableMascot(container) {
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let initialX = 0, initialY = 0;
+
+    const img = container.querySelector(".byteboy-img");
+    if (!img) return;
+
+    img.style.cursor = "move";
+
+    const onStart = (clientX, clientY) => {
+      isDragging = true;
+      startX = clientX;
+      startY = clientY;
+      
+      const rect = container.getBoundingClientRect();
+      const desktopRect = this.desktop.getBoundingClientRect();
+      
+      initialX = rect.left - desktopRect.left;
+      initialY = rect.top - desktopRect.top;
+      
+      container.style.bottom = "auto";
+      container.style.right = "auto";
+      container.style.left = `${initialX}px`;
+      container.style.top = `${initialY}px`;
+    };
+
+    const onMove = (clientX, clientY) => {
+      if (!isDragging) return;
+      const dx = clientX - startX;
+      const dy = clientY - startY;
+      
+      const maxW = this.desktop.clientWidth - container.offsetWidth;
+      const maxH = this.desktop.clientHeight - container.offsetHeight;
+      
+      const x = Math.max(0, Math.min(initialX + dx, maxW));
+      const y = Math.max(0, Math.min(initialY + dy, maxH));
+      
+      container.style.left = `${x}px`;
+      container.style.top = `${y}px`;
+    };
+
+    const onEnd = () => {
+      isDragging = false;
+    };
+
+    img.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      onStart(e.clientX, e.clientY);
+      
+      const moveHandler = (evt) => onMove(evt.clientX, evt.clientY);
+      const upHandler = () => {
+        onEnd();
+        document.removeEventListener("mousemove", moveHandler);
+        document.removeEventListener("mouseup", upHandler);
+      };
+      
+      document.addEventListener("mousemove", moveHandler);
+      document.addEventListener("mouseup", upHandler);
+    });
+
+    img.addEventListener("touchstart", (e) => {
+      const touch = e.touches[0];
+      if (!touch) return;
+      onStart(touch.clientX, touch.clientY);
+      
+      const moveHandler = (evt) => {
+        const t = evt.touches[0];
+        if (t) onMove(t.clientX, t.clientY);
+      };
+      const endHandler = () => {
+        onEnd();
+        document.removeEventListener("touchmove", moveHandler);
+        document.removeEventListener("touchend", endHandler);
+      };
+      
+      document.addEventListener("touchmove", moveHandler, { passive: false });
+      document.addEventListener("touchend", endHandler);
+    });
+  }
+
+  bindMascotActions(container) {
+    const jokeBtn = container.querySelector("[data-action='joke']");
+    const factBtn = container.querySelector("[data-action='fact']");
+    
+    const jokes = [
+      "Why do programmers wear glasses? Because they can't C#! 🤓",
+      "There are 10 types of people: those who understand binary, and those who don't! 🤖",
+      "A SQL query walks into a bar, walks up to two tables and asks, 'Can I join you?' 🍺",
+      "How many programmers does it take to change a lightbulb? None, that's a hardware problem! 💡",
+      "Why did the database administrator leave his wife? She had one-to-many relationships! 💔",
+      "What is a programmer's favorite hangout place? Foo Bar! 🍸",
+      "A computer once beat me at chess, but it was no match for me at kickboxing! 🥊"
+    ];
+    
+    const facts = [
+      "Sumit's core backend systems have boosted enterprise throughput by 23%! Now that's performance! ⚡",
+      "Did you know? Sumit maintains 85% unit test coverage in enterprise Java/Spring Boot code! 🧪",
+      "Spot Award Winner! Sumit was awarded by Intellect Design Arena for outstanding project delivery! 🏆",
+      "Sumit built asynchronous Apache Kafka event pipelines that cut database latency to 40ms! 🏎️",
+      "Clippy was introduced in Office 97. The real name of the character is Clippit! 📎",
+      "The first computer bug was an actual real moth trapped inside a relay in an Harvard Mark II computer in 1947! 🐛"
+    ];
+
+    if (jokeBtn) {
+      jokeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        clearTimeout(this.activeTimeout);
+        this.activeTimeout = setTimeout(() => this.dismiss(), 25000);
+        
+        const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+        container.querySelector(".byteboy-text").textContent = randomJoke;
+        this.sound.beep(800, 0.1, "sine", 0.05);
+      });
+    }
+    
+    if (factBtn) {
+      factBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        clearTimeout(this.activeTimeout);
+        this.activeTimeout = setTimeout(() => this.dismiss(), 25000);
+
+        const randomFact = facts[Math.floor(Math.random() * facts.length)];
+        container.querySelector(".byteboy-text").textContent = randomFact;
+        this.sound.beep(800, 0.1, "sine", 0.05);
+      });
+    }
   }
 
   dismiss() {
@@ -2004,8 +2238,19 @@ function initWallpaperAnimation() {
    App Init
    ========================================================================== */
 
+function applyTheme(theme) {
+  if (theme === "synthwave") {
+    document.body.classList.add("theme-synthwave");
+  } else {
+    document.body.classList.remove("theme-synthwave");
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyMobileModeClass();
+
+  const savedTheme = localStorage.getItem("retro_portfolio_theme") || "teal";
+  applyTheme(savedTheme);
 
   const sound = new SoundEngine();
   const wm = new WindowManager(sound);
@@ -2020,6 +2265,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initWallpaperAnimation();
   const notifier = new NotificationManager(sound);
   window.mascot = new ByteBoyMascot(sound);
+  
+  // Show mascot immediately on load so the user can interact right away
+  setTimeout(() => {
+    if (window.mascot) window.mascot.show();
+  }, 1000);
 
   document.addEventListener("mousemove", (e) => wm.onMouseMove(e));
   document.addEventListener("mouseup", () => wm.onMouseUp());
